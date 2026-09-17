@@ -5,7 +5,8 @@ const { list } = require('../src/services/query');
 const resources = require('../src/services/resources');
 const root = path.join(__dirname, '..');
 const escape = value => String(value).replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#x27;' }[char]));
-const code = value => `<pre><code>${escape(JSON.stringify(value, null, 2))}</code></pre>`;
+// Demo credentials are available only after unlocking the preview panel.
+const code = value => `<pre><code>${escape(JSON.stringify(value, (key, item) => key === 'password' || key === 'password_confirmation' ? '<password-akun-demo>' : item, 2))}</code></pre>`;
 
 // Keep examples aligned with the same static records served by the API.
 function syncDocs() {

@@ -41,25 +41,13 @@ npm test
 npm run build
 ```
 
-## Akun demo
+## Akun demo di beranda
 
-| Role | Email | Password |
-| --- | --- | --- |
-| Admin | admin@sekolahlab.com | Belajar123! |
-| Guru | guru@sekolahlab.com | Belajar123! |
-| Siswa | siswa@sekolahlab.com | Belajar123! |
+Buka bagian **Akun untuk mencoba login** pada beranda dokumentasi. Masukkan password pembuka yang telah disepakati untuk melihat 10 akun dan password login masing-masing. Klik **Kunci kembali** untuk menghapus daftar dari tampilan; refresh juga menguncinya kembali. Password pembuka dan hasil daftar tidak disimpan dalam localStorage/sessionStorage.
 
-Akun tambahan (password sama: `Belajar123!`):
+`POST /api/preview/accounts` adalah helper preview terpisah dari 24 endpoint pembelajaran. Kirim JSON `{ "password": "<password-pembuka>" }`; hasil hanya diberikan setelah verifikasi backend. Password salah menghasilkan 401. Respons memakai `Cache-Control: no-store`. Hash pembuka tersimpan di backend (`src/config/preview.js`), bukan HTML. Tidak perlu konfigurasi tambahan di Netlify. Opsional: `PREVIEW_PASSWORD_HASH` dapat mengganti hash bawaan dengan format `scrypt$salt$hex` (64 byte hasil scrypt).
 
-| Role | Email | Nama |
-| --- | --- | --- |
-| teacher | ratna@sekolahlab.com | Ratna Wulandari |
-| teacher | dewi@sekolahlab.com | Dewi Anggraini |
-| teacher | agus@sekolahlab.com | Agus Pratama |
-| student | arif@sekolahlab.com | Arif Ramadhan |
-| student | citra@sekolahlab.com | Citra Lestari |
-| student | danu@sekolahlab.com | Danu Wijaya |
-| student | eka@sekolahlab.com | Eka Permata |
+Penguncian melindungi daftar pada situs yang dihosting. Repository tetap berisi data dummy dan kode pengujian; mekanisme ini bukan penyimpanan kredensial produksi.
 
 Semua akun dan identitas bersifat fiktif. Kirim `POST /api/v1/auth/login` dengan JSON email/password. Gunakan `data.access_token` sebagai `Authorization: Bearer <token>` untuk `/auth/me` atau simulasi perubahan data.
 

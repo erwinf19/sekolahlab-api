@@ -10,6 +10,8 @@ app.use(cors({ origin: '*', methods: ['GET', 'POST', 'PATCH', 'DELETE', 'OPTIONS
 app.use(express.json({ limit: '100kb', strict: false }));
 // Support both original URLs and direct Lambda-style function URLs.
 app.use(['/api/v1', '/.netlify/functions/api/v1'], apiRoutes);
+// Private preview helper; separate from the 24 learning endpoints.
+app.use(['/api/preview', '/.netlify/functions/api/preview'], require('./routes/preview'));
 app.use(notFound);
 app.use(errorHandler);
 module.exports = app;
