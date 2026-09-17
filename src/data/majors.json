@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "code": "RPL",
+    "name": "Rekayasa Perangkat Lunak",
+    "description": "Program pembelajaran rekayasa perangkat lunak."
+  },
+  {
+    "id": 2,
+    "code": "TKJ",
+    "name": "Teknik Komputer dan Jaringan",
+    "description": "Program pembelajaran teknik komputer dan jaringan."
+  },
+  {
+    "id": 3,
+    "code": "DKV",
+    "name": "Desain Komunikasi Visual",
+    "description": "Program pembelajaran desain komunikasi visual."
+  },
+  {
+    "id": 4,
+    "code": "AKL",
+    "name": "Akuntansi dan Keuangan Lembaga",
+    "description": "Program pembelajaran akuntansi dan keuangan lembaga dengan praktik berbasis proyek."
+  },
+  {
+    "id": 5,
+    "code": "MPLB",
+    "name": "Manajemen Perkantoran dan Layanan Bisnis",
+    "description": "Program pembelajaran manajemen perkantoran dan layanan bisnis dengan praktik berbasis proyek."
+  },
+  {
+    "id": 6,
+    "code": "PM",
+    "name": "Pemasaran",
+    "description": "Program pembelajaran pemasaran dengan praktik berbasis proyek."
+  },
+  {
+    "id": 7,
+    "code": "TKR",
+    "name": "Teknik Kendaraan Ringan",
+    "description": "Program pembelajaran teknik kendaraan ringan dengan praktik berbasis proyek."
+  },
+  {
+    "id": 8,
+    "code": "TSM",
+    "name": "Teknik Sepeda Motor",
+    "description": "Program pembelajaran teknik sepeda motor dengan praktik berbasis proyek."
+  },
+  {
+    "id": 9,
+    "code": "KUL",
+    "name": "Kuliner",
+    "description": "Program pembelajaran kuliner dengan praktik berbasis proyek."
+  },
+  {
+    "id": 10,
+    "code": "PH",
+    "name": "Perhotelan",
+    "description": "Program pembelajaran perhotelan dengan praktik berbasis proyek."
+  }
+]

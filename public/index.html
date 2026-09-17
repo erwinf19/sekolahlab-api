@@ -1,0 +1,889 @@
+<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>SekolahLab API — Dokumentasi v1</title><meta name="description" content="Dokumentasi API SekolahLab: autentikasi, siswa, guru, pelajaran, berita, kelas, dan jurusan."><style>*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:28px}body{margin:0;background:#f5f7f9;color:#20313d;font:15px/1.7 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{color:#087a67;text-underline-offset:3px}aside{position:fixed;inset:0 auto 0 0;width:256px;background:#102d2b;color:#eff8f5;padding:34px 24px;overflow:auto}.brand{font-size:23px;font-weight:800;letter-spacing:-1px}.brand span{color:#70dfb5}.subbrand{font-size:12px;color:#abc4bd;margin:2px 0 24px}.draft{display:inline-block;border:1px solid #527770;color:#b4ead5;border-radius:6px;font-size:11px;letter-spacing:1px;padding:3px 8px}nav{display:grid;gap:3px;margin-top:26px}nav a{color:#c8dcd5;text-decoration:none;font-size:14px;border-radius:7px;padding:8px 10px}nav a:hover,nav a:focus-visible{background:#244c46;color:white}.side-note{font-size:12px;color:#a0b9b2;margin-top:35px}main{margin-left:256px;max-width:1290px;padding:52px 6vw 60px}section{background:white;border:1px solid #dfe7e7;border-radius:14px;margin-bottom:24px;padding:30px 34px;box-shadow:0 3px 10px #142f2903;scroll-margin-top:24px}.eyebrow{font-size:10px;font-weight:800;letter-spacing:2px;color:#078573}h2{font-size:29px;line-height:1.25;letter-spacing:-.7px;margin:10px 0 18px}h3{font-size:20px;margin:28px 0 10px}h4{font-size:13px;margin:20px 0 8px}p{margin:12px 0}.lead{font-size:17px;color:#52636c;max-width:690px}.notice{background:#eef8f4;border-left:3px solid #12a27f;border-radius:6px;padding:15px 18px;margin:22px 0;color:#264e43}.notice p{margin:8px 0}.stats{display:flex;gap:16px;margin:26px 0}.stats div{flex:1;border:1px solid #e3ece8;border-radius:10px;padding:15px 18px}.stats b{display:block;font-size:32px;line-height:1.3;color:#087461}.stats span{font-size:12px;color:#687977}.chip{display:inline-block;background:#f0f4f5;color:#45615b;padding:3px 9px;border-radius:5px;font-size:11px;font-weight:650}.table-wrap{overflow-x:auto;margin:16px 0}table{border-collapse:collapse;width:100%;font-size:13px;text-align:left}th{background:#f2f6f5;color:#526960;font-size:11px;letter-spacing:.4px}th,td{padding:12px 13px;vertical-align:top;border-bottom:1px solid #e7eeeb}td:first-child{font-weight:600}code{font:12px/1.7 ui-monospace,SFMono-Regular,Consolas,monospace;overflow-wrap:anywhere;background:#f0f4f3;border-radius:4px;padding:2px 5px}pre{background:#112d31;color:#d4ede8;border-radius:9px;padding:20px;overflow:auto;line-height:1.65;max-width:100%;tab-size:2}pre code{color:inherit;background:none;padding:0;overflow-wrap:normal;white-space:pre}.muted{font-size:13px;color:#687977}.filters{display:grid;grid-template-columns:2fr 1fr 1fr;gap:12px;margin-top:20px}label{display:grid;gap:6px;font-size:12px;font-weight:650}input,select{width:100%;min-width:0;padding:11px 10px;border:1px solid #cad8d4;border-radius:7px;background:white;color:#20313d;font:13px system-ui}input:focus,select:focus{outline:2px solid #0b987a;outline-offset:2px}.endpoint{border:1px solid #dee8e4;border-radius:8px;margin:8px 0;overflow:hidden}.endpoint summary{list-style:none;display:flex;align-items:center;gap:12px;padding:14px;cursor:pointer;flex-wrap:wrap}.endpoint summary::-webkit-details-marker{display:none}.endpoint summary::after{content:'+';margin-left:auto;color:#6c837b;font-size:20px}.endpoint[open] summary::after{content:'−'}.endpoint summary:hover{background:#f6faf8}.endpoint[open] summary{background:#f0f7f4;border-bottom:1px solid #dfe9e4}.endpoint summary code{background:none;padding:0;font-size:12px}.method{font:bold 10px/1.6 ui-monospace,monospace;padding:3px 6px;border-radius:4px;min-width:52px;text-align:center}.get{background:#e0f4ee;color:#076c53}.post{background:#e8efff;color:#2d59a2}.patch{background:#fff1d8;color:#8c5911}.delete{background:#fce8e8;color:#aa3b40}.endpoint-title{font-size:12px;color:#64796f}.access{font-size:10px;border:1px solid #d4dfda;padding:1px 5px;border-radius:4px}.endpoint-body{padding:10px 20px 20px}.endpoint[hidden]{display:none}footer{color:#79918a;font-size:12px;padding:0 8px}.print{display:block;background:none;border:1px solid #557d71;border-radius:6px;color:#c7e5d8;padding:9px 12px;margin-top:18px;cursor:pointer;font:12px system-ui}:focus-visible{outline:2px solid #1a9c7d;outline-offset:3px}@media(min-width:1500px){main{margin-right:auto}}@media(max-width:1000px){aside{width:210px;padding:24px 18px}main{margin-left:210px;padding:30px 24px}section{padding:25px}.endpoint-title{display:none}}@media(max-width:700px){aside{position:static;width:auto;padding:22px}nav{display:flex;overflow:auto;gap:4px;margin-top:18px}nav a{white-space:nowrap;font-size:12px}.side-note,.print{display:none}.subbrand{margin-bottom:12px}main{margin:0;padding:18px 12px}section{padding:22px 18px;border-radius:10px}h2{font-size:25px}.stats{gap:7px}.stats div{padding:10px}.stats b{font-size:27px}.stats span{font-size:10px}.filters{grid-template-columns:1fr 1fr}.filters label:first-child{grid-column:1/-1}.endpoint summary{gap:7px;padding:11px}.endpoint summary code{font-size:11px}.access{display:none}.endpoint-body{padding:8px 12px 16px}pre{padding:14px}th,td{padding:10px;min-width:90px}}@media print{aside,.filters,#result-count,#empty{display:none}main{margin:0;padding:0;max-width:none}section{box-shadow:none;border-radius:0;break-inside:auto}body{font-size:11px;background:white}h2{font-size:20px}pre{white-space:pre-wrap;background:#f2f4f3;color:#122e25}pre code{white-space:pre-wrap;overflow-wrap:anywhere}.endpoint-title{display:inline}.endpoint{break-inside:avoid}a{color:inherit}}</style></head><body><aside><div class="brand">Sekolah<span>Lab</span></div><div class="subbrand">API untuk belajar & bereksperimen</div><span class="draft">API V1 · SESI 3</span><nav aria-label="Daftar isi"><a href="#overview">Ringkasan</a><a href="#rules">Perilaku API</a><a href="#auth">Autentikasi</a><a href="#endpoints">24 endpoint</a><a href="#queries">Query & pagination</a><a href="#schemas">Struktur data</a><a href="#mutations">Edit & hapus</a><a href="#responses">Respons & error</a><a href="#examples">Contoh frontend</a><a href="#scope">Cakupan versi</a><a href="#sources">Referensi</a></nav><p class="side-note">Data fiktif. Tanpa database.<br>Data statis · perubahan simulasi.</p><button class="print" id="print">Cetak / simpan PDF</button></aside><main><section id="overview"><span class="eyebrow">SEKOLAHLAB / DOKUMENTASI API</span><h2>API sekolah, untuk belajar.</h2><p class="lead">Dokumentasi SekolahLab API. Mulai dari mengambil data, lalu berlatih autentikasi, validasi form, dan respons perubahan data.</p><div class="notice"><strong>24 endpoint telah diimplementasikan · belum dideploy online.</strong><br>Jalankan project lokal atau deploy ke Netlify untuk mencoba API. Login memerlukan JWT_SECRET. Contoh di halaman ini tidak mengirim request secara otomatis.</div><div class="stats"><div><b>24</b><span>endpoint tersedia</span></div><div><b>7</b><span>entitas data</span></div><div><b>0</b><span>database</span></div></div><p><span class="chip">Express</span> <span class="chip">Netlify Functions</span> <span class="chip">JSON statis</span> <span class="chip">Dokumentasi HTML</span></p><p>Halaman depan <code>/</code> menampilkan dokumentasi. Seluruh endpoint API memakai prefix <code>/api/v1</code>. Lokal: http://localhost:3000/api/v1. Domain deployment belum ditentukan.</p><pre><code>https://&lt;nama-site&gt;.netlify.app/api/v1</code></pre><p>Auth, baca data, dan edit/hapus simulasi sudah tersedia. Kelas/jurusan membantu filter dan relasi. Label prioritas pada mapping menunjukkan urutan pembelajaran.</p></section><section id="rules"><span class="eyebrow">KONTRAK V1</span><h2>Perilaku API.</h2><div class="table-wrap"><table><thead><tr><th>Area</th><th>Rancangan</th></tr></thead><tbody><tr><td>Baca data</td><td>Semua GET data sekolah bersifat publik. Semua nama, akun, dan profil adalah data fiktif.</td></tr><tr><td>Login</td><td>Akun demo tetap; token bertanda tangan berlaku 3.600 detik. GET /auth/me membutuhkan token.</td></tr><tr><td>Register</td><td>Validasi dan respons 201 saja. Akun tidak disimpan, tidak dapat digunakan login, tidak mengembalikan token.</td></tr><tr><td>Edit / hapus</td><td>Hanya admin. PATCH dan DELETE mengembalikan meta.simulation=true dan meta.persisted=false. GET berikutnya tidak berubah.</td></tr><tr><td>Logout</td><td>Frontend menghapus token. Tidak ada endpoint logout/revokasi pada v1; token tetap valid sampai kedaluwarsa.</td></tr><tr><td>Penyimpanan</td><td>Fixture JSON ikut deployment. Ubah fixture lalu deploy ulang untuk memperbarui data dasarnya.</td></tr><tr><td>Relasi</td><td>ID relasi eksplisit, tanpa join otomatis. Detail relasi diambil melalui endpoint lain.</td></tr><tr><td>CORS</td><td>Izinkan semua origin untuk API latihan, tanpa cookie/credentials. Izinkan Authorization, Content-Type dan GET/POST/PATCH/DELETE/OPTIONS.</td></tr><tr><td>Gambar</td><td>Siswa/guru hanya ilustrasi DiceBear dengan seed per ID. Gambar berita berupa URL HTTPS. Gambar berita memakai foto ilustrasi Unsplash (buku, komputer, dan lapangan basket), bukan dokumentasi kejadian nyata. Beberapa berita berbagi gambar. Sumber foto tercantum pada bagian Referensi.</td></tr></tbody></table></div></section><section id="auth"><span class="eyebrow">KONTRAK V1</span><h2>Alur login dan akun demo.</h2><p>Tersedia 10 akun fiktif dengan tiga role. Tiga akun utama berikut tetap bisa digunakan; tujuh akun tambahan tercantum di README. Seluruh akun memakai password demo yang sama.</p><div class="table-wrap"><table><thead><tr><th>Role</th><th>Email</th><th>Password</th><th>Hak akses</th></tr></thead><tbody><tr><td>admin</td><td>admin@sekolahlab.com</td><td>Belajar123!</td><td>Profil, seluruh GET, simulasi PATCH/DELETE</td></tr><tr><td>teacher</td><td>guru@sekolahlab.com</td><td>Belajar123!</td><td>Profil dan seluruh GET</td></tr><tr><td>student</td><td>siswa@sekolahlab.com</td><td>Belajar123!</td><td>Profil dan seluruh GET</td></tr></tbody></table></div><ol><li>Kirim email dan password ke <code>POST /api/v1/auth/login</code>.</li><li>Ambil <code>data.access_token</code> dari respons.</li><li>Kirim header berikut ke endpoint yang membutuhkan token.</li><li>Jika mendapat 401 karena token kedaluwarsa, login kembali. Refresh token belum masuk v1.</li></ol><pre><code>Authorization: Bearer &lt;access_token&gt;
+Content-Type: application/json</code></pre><p><strong>Setup lokal:</strong> jalankan <code>npm ci</code>, <code>npm run setup</code>, lalu <code>npm run dev</code>. Setup membuat .env dengan secret acak tanpa menimpa file yang sudah ada. Pada Netlify, atur JWT_SECRET minimal 32 karakter di environment variable Functions. Jika secret tidak ada atau terlalu pendek, login dan verifikasi token mengembalikan 503.</p><p>Register: <code>name</code> 2–100 karakter, email valid maksimal 254 karakter, password 8–72 karakter, dan <code>password_confirmation</code> harus sama. Email dinormalisasi menjadi lowercase dan dipangkas spasinya. Password tidak dipangkas. Nama dipangkas sebelum validasi. Email fixture yang sudah dipakai menghasilkan 409. Email baru yang sama bisa diregister ulang karena tidak disimpan.</p><p>Login: email valid dan password wajib terisi, maksimal 72 karakter. Kredensial salah selalu 401 dengan pesan umum. Field body yang tidak dikenali ditolak dengan 422. Role atau password hash tidak bisa diatur melalui register.</p></section><section id="endpoints"><span class="eyebrow">KONTRAK V1</span><h2>Mapping endpoint.</h2><p>Path di bawah sudah menyertakan <code>/api/v1</code>. Buka setiap baris untuk melihat body, contoh respons, akses, dan kode error.</p><div class="filters"><label>Cari endpoint<input id="search" type="search" placeholder="Cari siswa, /news, login…"></label><label>Prioritas<select id="phase"><option value="">Semua prioritas</option><option>Utama</option><option>Pendukung</option><option>Lanjutan</option></select></label><label>Metode<select id="method"><option value="">Semua metode</option><option>GET</option><option>POST</option><option>PATCH</option><option>DELETE</option></select></label></div><p id="result-count" class="muted" aria-live="polite">24 endpoint</p><div id="endpoint-list"><details class="endpoint" data-search="Auth Login dengan akun demo /api/v1/auth/login" data-method="POST" data-phase="Utama"><summary><span class="method post">POST</span><code>/api/v1/auth/login</code><span class="endpoint-title">Login dengan akun demo</span><span class="access">Publik</span></summary><div class="endpoint-body"><p><span class="chip">Utama</span> <span class="chip">Auth</span></p><p>Cocokkan email dan password dengan akun demo. Token ditandatangani backend; secret disimpan sebagai environment variable. Masa berlaku: 1 jam. Password tidak pernah dikembalikan. Jika JWT_SECRET belum dikonfigurasi, endpoint mengembalikan 503.</p><h4>Request body</h4><pre><code>{
+  &quot;email&quot;: &quot;admin@sekolahlab.com&quot;,
+  &quot;password&quot;: &quot;Belajar123!&quot;
+}</code></pre><h4>Respons 200</h4><pre><code>{
+  &quot;success&quot;: true,
+  &quot;message&quot;: &quot;Login berhasil.&quot;,
+  &quot;data&quot;: {
+    &quot;user&quot;: {
+      &quot;id&quot;: 1,
+      &quot;name&quot;: &quot;Admin SekolahLab&quot;,
+      &quot;email&quot;: &quot;admin@sekolahlab.com&quot;,
+      &quot;role&quot;: &quot;admin&quot;,
+      &quot;photo_url&quot;: &quot;https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-admin-001&quot;
+    },
+    &quot;access_token&quot;: &quot;&lt;token-demo-dari-backend&gt;&quot;,
+    &quot;token_type&quot;: &quot;Bearer&quot;,
+    &quot;expires_in&quot;: 3600
+  }
+}</code></pre><p class="muted">Error yang mungkin: 400, 401, 422, 500, 503, 413, 415. Lihat tabel status dan aturan validasi.</p></div></details><details class="endpoint" data-search="Auth Simulasi registrasi /api/v1/auth/register" data-method="POST" data-phase="Utama"><summary><span class="method post">POST</span><code>/api/v1/auth/register</code><span class="endpoint-title">Simulasi registrasi</span><span class="access">Publik</span></summary><div class="endpoint-body"><p><span class="chip">Utama</span> <span class="chip">Auth</span></p><p>Validasi nama, email, password dan konfirmasi. Role selalu student; klien tidak boleh mengirim role. Email dibandingkan hanya dengan akun fixture. Akun baru tidak disimpan, tidak mendapatkan token, dan tidak bisa login berikutnya.</p><h4>Request body</h4><pre><code>{
+  &quot;name&quot;: &quot;Dina Lestari&quot;,
+  &quot;email&quot;: &quot;dina@example.com&quot;,
+  &quot;password&quot;: &quot;Belajar123!&quot;,
+  &quot;password_confirmation&quot;: &quot;Belajar123!&quot;
+}</code></pre><h4>Respons 201</h4><pre><code>{
+  &quot;success&quot;: true,
+  &quot;message&quot;: &quot;Simulasi registrasi berhasil. Akun tidak disimpan.&quot;,
+  &quot;data&quot;: {
+    &quot;id&quot;: null,
+    &quot;name&quot;: &quot;Dina Lestari&quot;,
+    &quot;email&quot;: &quot;dina@example.com&quot;,
+    &quot;role&quot;: &quot;student&quot;
+  },
+  &quot;meta&quot;: {
+    &quot;simulation&quot;: true,
+    &quot;persisted&quot;: false
+  }
+}</code></pre><p class="muted">Error yang mungkin: 400, 409, 422, 500, 413, 415. Lihat tabel status dan aturan validasi.</p></div></details><details class="endpoint" data-search="Auth Profil pengguna login /api/v1/auth/me" data-method="GET" data-phase="Utama"><summary><span class="method get">GET</span><code>/api/v1/auth/me</code><span class="endpoint-title">Profil pengguna login</span><span class="access">Token</span></summary><div class="endpoint-body"><p><span class="chip">Utama</span> <span class="chip">Auth</span></p><p>Verifikasi token, masa berlaku, dan ID akun demo, lalu kembalikan profil aman. Token hilang/tidak valid/kedaluwarsa menghasilkan 401.</p><h4>Request body</h4><p class="muted">Tidak ada body.</p><h4>Respons 200</h4><pre><code>{
+  &quot;success&quot;: true,
+  &quot;message&quot;: &quot;Data berhasil diambil.&quot;,
+  &quot;data&quot;: {
+    &quot;id&quot;: 1,
+    &quot;name&quot;: &quot;Admin SekolahLab&quot;,
+    &quot;email&quot;: &quot;admin@sekolahlab.com&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;photo_url&quot;: &quot;https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-admin-001&quot;
+  }
+}</code></pre><p class="muted">Error yang mungkin: 401, 500, 503. Lihat tabel status dan aturan validasi.</p></div></details><details class="endpoint" data-search="Siswa Daftar siswa /api/v1/students" data-method="GET" data-phase="Utama"><summary><span class="method get">GET</span><code>/api/v1/students</code><span class="endpoint-title">Daftar siswa</span><span class="access">Publik</span></summary><div class="endpoint-body"><p><span class="chip">Utama</span> <span class="chip">Siswa</span></p><p>Cari pada name, nis. Filter: class_id (integer positif), gender (male/female). Sorting diizinkan: id, name, nis. Contoh respons memakai data fixture. Maksimal 10 item ditampilkan pada halaman pertama dengan pengaturan default.</p><h4>Request body</h4><p class="muted">Tidak ada body.</p><h4>Respons 200</h4><pre><code>{
+  &quot;success&quot;: true,
+  &quot;message&quot;: &quot;Data berhasil diambil.&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;id&quot;: 1,
+      &quot;user_id&quot;: 3,
+      &quot;nis&quot;: &quot;20260001&quot;,
+      &quot;name&quot;: &quot;Alya Putri&quot;,
+      &quot;gender&quot;: &quot;female&quot;,
+      &quot;birth_date&quot;: &quot;2010-05-12&quot;,
+      &quot;class_id&quot;: 1,
+      &quot;photo_url&quot;: &quot;https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-001&quot;
+    },
+    {
+      &quot;id&quot;: 2,
+      &quot;user_id&quot;: 7,
+      &quot;nis&quot;: &quot;20260002&quot;,
+      &quot;name&quot;: &quot;Arif Ramadhan&quot;,
+      &quot;gender&quot;: &quot;male&quot;,
+      &quot;birth_date&quot;: &quot;2010-02-02&quot;,
+      &quot;class_id&quot;: 2,
+      &quot;photo_url&quot;: &quot;https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-002&quot;
+    },
+    {
+      &quot;id&quot;: 3,
+      &quot;user_id&quot;: 8,
+      &quot;nis&quot;: &quot;20260003&quot;,
+      &quot;name&quot;: &quot;Citra Lestari&quot;,
+      &quot;gender&quot;: &quot;female&quot;,
+      &quot;birth_date&quot;: &quot;2010-03-03&quot;,
+      &quot;class_id&quot;: 3,
+      &quot;photo_url&quot;: &quot;https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-003&quot;
+    },
+    {
+      &quot;id&quot;: 4,
+      &quot;user_id&quot;: 9,
+      &quot;nis&quot;: &quot;20260004&quot;,
+      &quot;name&quot;: &quot;Danu Wijaya&quot;,
+      &quot;gender&quot;: &quot;male&quot;,
+      &quot;birth_date&quot;: &quot;2009-04-04&quot;,
+      &quot;class_id&quot;: 4,
+      &quot;photo_url&quot;: &quot;https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-004&quot;
+    },
+    {
+      &quot;id&quot;: 5,
+      &quot;user_id&quot;: 10,
+      &quot;nis&quot;: &quot;20260005&quot;,
+      &quot;name&quot;: &quot;Eka Permata&quot;,
+      &quot;gender&quot;: &quot;female&quot;,
+      &quot;birth_date&quot;: &quot;2009-05-05&quot;,
+      &quot;class_id&quot;: 5,
+      &quot;photo_url&quot;: &quot;https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-005&quot;
+    },
+    {
+      &quot;id&quot;: 6,
+      &quot;user_id&quot;: null,
+      &quot;nis&quot;: &quot;20260006&quot;,
+      &quot;name&quot;: &quot;Fajar Nugraha&quot;,
+      &quot;gender&quot;: &quot;male&quot;,
+      &quot;birth_date&quot;: &quot;2009-06-06&quot;,
+      &quot;class_id&quot;: 6,
+      &quot;photo_url&quot;: &quot;https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-006&quot;
+    },
+    {
+      &quot;id&quot;: 7,
+      &quot;user_id&quot;: null,
+      &quot;nis&quot;: &quot;20260007&quot;,
+      &quot;name&quot;: &quot;Gita Maharani&quot;,
+      &quot;gender&quot;: &quot;female&quot;,
+      &quot;birth_date&quot;: &quot;2010-07-07&quot;,
+      &quot;class_id&quot;: 1,
+      &quot;photo_url&quot;: &quot;https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-007&quot;
+    },
+    {
+      &quot;id&quot;: 8,
+      &quot;user_id&quot;: null,
+      &quot;nis&quot;: &quot;20260008&quot;,
+      &quot;name&quot;: &quot;Hadi Kurniawan&quot;,
+      &quot;gender&quot;: &quot;male&quot;,
+      &quot;birth_date&quot;: &quot;2010-08-08&quot;,
+      &quot;class_id&quot;: 2,
+      &quot;photo_url&quot;: &quot;https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-008&quot;
+    },
+    {
+      &quot;id&quot;: 9,
+      &quot;user_id&quot;: null,
+      &quot;nis&quot;: &quot;20260009&quot;,
+      &quot;name&quot;: &quot;Intan Safitri&quot;,
+      &quot;gender&quot;: &quot;female&quot;,
+      &quot;birth_date&quot;: &quot;2010-09-09&quot;,
+      &quot;class_id&quot;: 3,
+      &quot;photo_url&quot;: &quot;https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-009&quot;
+    },
+    {
+      &quot;id&quot;: 10,
+      &quot;user_id&quot;: null,
+      &quot;nis&quot;: &quot;20260010&quot;,
+      &quot;name&quot;: &quot;Joko Prasetyo&quot;,
+      &quot;gender&quot;: &quot;male&quot;,
+      &quot;birth_date&quot;: &quot;2009-10-10&quot;,
+      &quot;class_id&quot;: 4,
+      &quot;photo_url&quot;: &quot;https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-010&quot;
+    }
+  ],
+  &quot;meta&quot;: {
+    &quot;page&quot;: 1,
+    &quot;limit&quot;: 10,
+    &quot;total&quot;: 30,
+    &quot;total_pages&quot;: 3
+  }
+}</code></pre><p class="muted">Error yang mungkin: 400, 500. Lihat tabel status dan aturan validasi.</p></div></details><details class="endpoint" data-search="Siswa Detail siswa /api/v1/students/:id" data-method="GET" data-phase="Utama"><summary><span class="method get">GET</span><code>/api/v1/students/:id</code><span class="endpoint-title">Detail siswa</span><span class="access">Publik</span></summary><div class="endpoint-body"><p><span class="chip">Utama</span> <span class="chip">Siswa</span></p><p>ID integer positif. Respons menggunakan ID relasi; ambil nama relasi dari endpoint terkait. Data tidak ditemukan menghasilkan 404.</p><h4>Request body</h4><p class="muted">Tidak ada body.</p><h4>Respons 200</h4><pre><code>{
+  &quot;success&quot;: true,
+  &quot;message&quot;: &quot;Data berhasil diambil.&quot;,
+  &quot;data&quot;: {
+    &quot;id&quot;: 1,
+    &quot;user_id&quot;: 3,
+    &quot;nis&quot;: &quot;20260001&quot;,
+    &quot;name&quot;: &quot;Alya Putri&quot;,
+    &quot;gender&quot;: &quot;female&quot;,
+    &quot;birth_date&quot;: &quot;2010-05-12&quot;,
+    &quot;class_id&quot;: 1,
+    &quot;photo_url&quot;: &quot;https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-001&quot;
+  }
+}</code></pre><p class="muted">Error yang mungkin: 400, 404, 500. Lihat tabel status dan aturan validasi.</p></div></details><details class="endpoint" data-search="Siswa Simulasi edit siswa /api/v1/students/:id" data-method="PATCH" data-phase="Lanjutan"><summary><span class="method patch">PATCH</span><code>/api/v1/students/:id</code><span class="endpoint-title">Simulasi edit siswa</span><span class="access">Admin</span></summary><div class="endpoint-body"><p><span class="chip">Lanjutan</span> <span class="chip">Siswa</span></p><p>Ubah sebagian field yang diizinkan. Validasi berdasarkan fixture awal. Response menampilkan hasil penggabungan; GET berikutnya tetap membaca data awal. Tidak menyimpan perubahan.</p><h4>Request body</h4><pre><code>{
+  &quot;name&quot;: &quot;Alya Putri Utami&quot;,
+  &quot;class_id&quot;: 2
+}</code></pre><h4>Respons 200</h4><pre><code>{
+  &quot;success&quot;: true,
+  &quot;message&quot;: &quot;Simulasi perubahan berhasil. Data tidak disimpan.&quot;,
+  &quot;data&quot;: {
+    &quot;id&quot;: 1,
+    &quot;user_id&quot;: 3,
+    &quot;nis&quot;: &quot;20260001&quot;,
+    &quot;name&quot;: &quot;Alya Putri Utami&quot;,
+    &quot;gender&quot;: &quot;female&quot;,
+    &quot;birth_date&quot;: &quot;2010-05-12&quot;,
+    &quot;class_id&quot;: 2,
+    &quot;photo_url&quot;: &quot;https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-001&quot;
+  },
+  &quot;meta&quot;: {
+    &quot;simulation&quot;: true,
+    &quot;persisted&quot;: false
+  }
+}</code></pre><p class="muted">Error yang mungkin: 400, 401, 403, 404, 409, 422, 500, 503, 413, 415. Lihat tabel status dan aturan validasi.</p></div></details><details class="endpoint" data-search="Siswa Simulasi hapus siswa /api/v1/students/:id" data-method="DELETE" data-phase="Lanjutan"><summary><span class="method delete">DELETE</span><code>/api/v1/students/:id</code><span class="endpoint-title">Simulasi hapus siswa</span><span class="access">Admin</span></summary><div class="endpoint-body"><p><span class="chip">Lanjutan</span> <span class="chip">Siswa</span></p><p>Periksa ID pada fixture, lalu kembalikan konfirmasi. Tidak menghapus data atau menjalankan cascade; relasi tetap sama. Dipanggil lagi pada ID yang sama tetap sukses selama ID ada pada fixture.</p><h4>Request body</h4><p class="muted">Tidak ada body.</p><h4>Respons 200</h4><pre><code>{
+  &quot;success&quot;: true,
+  &quot;message&quot;: &quot;Simulasi penghapusan berhasil. Data awal tetap tersedia.&quot;,
+  &quot;data&quot;: {
+    &quot;id&quot;: 1
+  },
+  &quot;meta&quot;: {
+    &quot;simulation&quot;: true,
+    &quot;persisted&quot;: false
+  }
+}</code></pre><p class="muted">Error yang mungkin: 400, 401, 403, 404, 500, 503. Lihat tabel status dan aturan validasi.</p></div></details><details class="endpoint" data-search="Guru Daftar guru /api/v1/teachers" data-method="GET" data-phase="Utama"><summary><span class="method get">GET</span><code>/api/v1/teachers</code><span class="endpoint-title">Daftar guru</span><span class="access">Publik</span></summary><div class="endpoint-body"><p><span class="chip">Utama</span> <span class="chip">Guru</span></p><p>Cari pada name, teacher_code. Filter: subject_id (integer positif), gender (male/female). Sorting diizinkan: id, name, teacher_code. Contoh respons memakai data fixture. Maksimal 10 item ditampilkan pada halaman pertama dengan pengaturan default.</p><h4>Request body</h4><p class="muted">Tidak ada body.</p><h4>Respons 200</h4><pre><code>{
+  &quot;success&quot;: true,
+  &quot;message&quot;: &quot;Data berhasil diambil.&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;id&quot;: 1,
+      &quot;user_id&quot;: 2,
+      &quot;teacher_code&quot;: &quot;GR001&quot;,
+      &quot;name&quot;: &quot;Budi Santoso&quot;,
+      &quot;gender&quot;: &quot;male&quot;,
+      &quot;subject_ids&quot;: [
+        1,
+        2
+      ],
+      &quot;photo_url&quot;: &quot;https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-teacher-001&quot;
+    },
+    {
+      &quot;id&quot;: 2,
+      &quot;user_id&quot;: 4,
+      &quot;teacher_code&quot;: &quot;GR002&quot;,
+      &quot;name&quot;: &quot;Ratna Wulandari&quot;,
+      &quot;gender&quot;: &quot;female&quot;,
+      &quot;subject_ids&quot;: [
+        2
+      ],
+      &quot;photo_url&quot;: &quot;https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-teacher-002&quot;
+    },
+    {
+      &quot;id&quot;: 3,
+      &quot;user_id&quot;: 5,
+      &quot;teacher_code&quot;: &quot;GR003&quot;,
+      &quot;name&quot;: &quot;Dewi Anggraini&quot;,
+      &quot;gender&quot;: &quot;female&quot;,
+      &quot;subject_ids&quot;: [
+        3
+      ],
+      &quot;photo_url&quot;: &quot;https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-teacher-003&quot;
+    },
+    {
+      &quot;id&quot;: 4,
+      &quot;user_id&quot;: 6,
+      &quot;teacher_code&quot;: &quot;GR004&quot;,
+      &quot;name&quot;: &quot;Agus Pratama&quot;,
+      &quot;gender&quot;: &quot;male&quot;,
+      &quot;subject_ids&quot;: [
+        4
+      ],
+      &quot;photo_url&quot;: &quot;https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-teacher-004&quot;
+    },
+    {
+      &quot;id&quot;: 5,
+      &quot;user_id&quot;: null,
+      &quot;teacher_code&quot;: &quot;GR005&quot;,
+      &quot;name&quot;: &quot;Siti Rahmawati&quot;,
+      &quot;gender&quot;: &quot;female&quot;,
+      &quot;subject_ids&quot;: [
+        5
+      ],
+      &quot;photo_url&quot;: &quot;https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-teacher-005&quot;
+    },
+    {
+      &quot;id&quot;: 6,
+      &quot;user_id&quot;: null,
+      &quot;teacher_code&quot;: &quot;GR006&quot;,
+      &quot;name&quot;: &quot;Rudi Hartono&quot;,
+      &quot;gender&quot;: &quot;male&quot;,
+      &quot;subject_ids&quot;: [
+        6
+      ],
+      &quot;photo_url&quot;: &quot;https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-teacher-006&quot;
+    },
+    {
+      &quot;id&quot;: 7,
+      &quot;user_id&quot;: null,
+      &quot;teacher_code&quot;: &quot;GR007&quot;,
+      &quot;name&quot;: &quot;Nina Kartika&quot;,
+      &quot;gender&quot;: &quot;female&quot;,
+      &quot;subject_ids&quot;: [
+        7
+      ],
+      &quot;photo_url&quot;: &quot;https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-teacher-007&quot;
+    },
+    {
+      &quot;id&quot;: 8,
+      &quot;user_id&quot;: null,
+      &quot;teacher_code&quot;: &quot;GR008&quot;,
+      &quot;name&quot;: &quot;Dimas Saputra&quot;,
+      &quot;gender&quot;: &quot;male&quot;,
+      &quot;subject_ids&quot;: [
+        8
+      ],
+      &quot;photo_url&quot;: &quot;https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-teacher-008&quot;
+    },
+    {
+      &quot;id&quot;: 9,
+      &quot;user_id&quot;: null,
+      &quot;teacher_code&quot;: &quot;GR009&quot;,
+      &quot;name&quot;: &quot;Laras Puspita&quot;,
+      &quot;gender&quot;: &quot;female&quot;,
+      &quot;subject_ids&quot;: [
+        9
+      ],
+      &quot;photo_url&quot;: &quot;https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-teacher-009&quot;
+    },
+    {
+      &quot;id&quot;: 10,
+      &quot;user_id&quot;: null,
+      &quot;teacher_code&quot;: &quot;GR010&quot;,
+      &quot;name&quot;: &quot;Andi Setiawan&quot;,
+      &quot;gender&quot;: &quot;male&quot;,
+      &quot;subject_ids&quot;: [
+        10
+      ],
+      &quot;photo_url&quot;: &quot;https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-teacher-010&quot;
+    }
+  ],
+  &quot;meta&quot;: {
+    &quot;page&quot;: 1,
+    &quot;limit&quot;: 10,
+    &quot;total&quot;: 10,
+    &quot;total_pages&quot;: 1
+  }
+}</code></pre><p class="muted">Error yang mungkin: 400, 500. Lihat tabel status dan aturan validasi.</p></div></details><details class="endpoint" data-search="Guru Detail guru /api/v1/teachers/:id" data-method="GET" data-phase="Utama"><summary><span class="method get">GET</span><code>/api/v1/teachers/:id</code><span class="endpoint-title">Detail guru</span><span class="access">Publik</span></summary><div class="endpoint-body"><p><span class="chip">Utama</span> <span class="chip">Guru</span></p><p>ID integer positif. Respons menggunakan ID relasi; ambil nama relasi dari endpoint terkait. Data tidak ditemukan menghasilkan 404.</p><h4>Request body</h4><p class="muted">Tidak ada body.</p><h4>Respons 200</h4><pre><code>{
+  &quot;success&quot;: true,
+  &quot;message&quot;: &quot;Data berhasil diambil.&quot;,
+  &quot;data&quot;: {
+    &quot;id&quot;: 1,
+    &quot;user_id&quot;: 2,
+    &quot;teacher_code&quot;: &quot;GR001&quot;,
+    &quot;name&quot;: &quot;Budi Santoso&quot;,
+    &quot;gender&quot;: &quot;male&quot;,
+    &quot;subject_ids&quot;: [
+      1,
+      2
+    ],
+    &quot;photo_url&quot;: &quot;https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-teacher-001&quot;
+  }
+}</code></pre><p class="muted">Error yang mungkin: 400, 404, 500. Lihat tabel status dan aturan validasi.</p></div></details><details class="endpoint" data-search="Guru Simulasi edit guru /api/v1/teachers/:id" data-method="PATCH" data-phase="Lanjutan"><summary><span class="method patch">PATCH</span><code>/api/v1/teachers/:id</code><span class="endpoint-title">Simulasi edit guru</span><span class="access">Admin</span></summary><div class="endpoint-body"><p><span class="chip">Lanjutan</span> <span class="chip">Guru</span></p><p>Ubah sebagian field yang diizinkan. Validasi berdasarkan fixture awal. Response menampilkan hasil penggabungan; GET berikutnya tetap membaca data awal. Tidak menyimpan perubahan.</p><h4>Request body</h4><pre><code>{
+  &quot;name&quot;: &quot;Budi Santoso&quot;,
+  &quot;subject_ids&quot;: [
+    1
+  ]
+}</code></pre><h4>Respons 200</h4><pre><code>{
+  &quot;success&quot;: true,
+  &quot;message&quot;: &quot;Simulasi perubahan berhasil. Data tidak disimpan.&quot;,
+  &quot;data&quot;: {
+    &quot;id&quot;: 1,
+    &quot;user_id&quot;: 2,
+    &quot;teacher_code&quot;: &quot;GR001&quot;,
+    &quot;name&quot;: &quot;Budi Santoso&quot;,
+    &quot;gender&quot;: &quot;male&quot;,
+    &quot;subject_ids&quot;: [
+      1
+    ],
+    &quot;photo_url&quot;: &quot;https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-teacher-001&quot;
+  },
+  &quot;meta&quot;: {
+    &quot;simulation&quot;: true,
+    &quot;persisted&quot;: false
+  }
+}</code></pre><p class="muted">Error yang mungkin: 400, 401, 403, 404, 409, 422, 500, 503, 413, 415. Lihat tabel status dan aturan validasi.</p></div></details><details class="endpoint" data-search="Guru Simulasi hapus guru /api/v1/teachers/:id" data-method="DELETE" data-phase="Lanjutan"><summary><span class="method delete">DELETE</span><code>/api/v1/teachers/:id</code><span class="endpoint-title">Simulasi hapus guru</span><span class="access">Admin</span></summary><div class="endpoint-body"><p><span class="chip">Lanjutan</span> <span class="chip">Guru</span></p><p>Periksa ID pada fixture, lalu kembalikan konfirmasi. Tidak menghapus data atau menjalankan cascade; relasi tetap sama. Dipanggil lagi pada ID yang sama tetap sukses selama ID ada pada fixture.</p><h4>Request body</h4><p class="muted">Tidak ada body.</p><h4>Respons 200</h4><pre><code>{
+  &quot;success&quot;: true,
+  &quot;message&quot;: &quot;Simulasi penghapusan berhasil. Data awal tetap tersedia.&quot;,
+  &quot;data&quot;: {
+    &quot;id&quot;: 1
+  },
+  &quot;meta&quot;: {
+    &quot;simulation&quot;: true,
+    &quot;persisted&quot;: false
+  }
+}</code></pre><p class="muted">Error yang mungkin: 400, 401, 403, 404, 500, 503. Lihat tabel status dan aturan validasi.</p></div></details><details class="endpoint" data-search="Pelajaran Daftar pelajaran /api/v1/subjects" data-method="GET" data-phase="Utama"><summary><span class="method get">GET</span><code>/api/v1/subjects</code><span class="endpoint-title">Daftar pelajaran</span><span class="access">Publik</span></summary><div class="endpoint-body"><p><span class="chip">Utama</span> <span class="chip">Pelajaran</span></p><p>Cari pada name, code. Filter: —. Sorting diizinkan: id, name, code. Contoh respons memakai data fixture. Maksimal 10 item ditampilkan pada halaman pertama dengan pengaturan default.</p><h4>Request body</h4><p class="muted">Tidak ada body.</p><h4>Respons 200</h4><pre><code>{
+  &quot;success&quot;: true,
+  &quot;message&quot;: &quot;Data berhasil diambil.&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;id&quot;: 1,
+      &quot;code&quot;: &quot;MTK&quot;,
+      &quot;name&quot;: &quot;Matematika&quot;,
+      &quot;description&quot;: &quot;Materi latihan matematika untuk siswa sekolah.&quot;
+    },
+    {
+      &quot;id&quot;: 2,
+      &quot;code&quot;: &quot;BIN&quot;,
+      &quot;name&quot;: &quot;Bahasa Indonesia&quot;,
+      &quot;description&quot;: &quot;Materi latihan bahasa indonesia untuk siswa sekolah.&quot;
+    },
+    {
+      &quot;id&quot;: 3,
+      &quot;code&quot;: &quot;BIG&quot;,
+      &quot;name&quot;: &quot;Bahasa Inggris&quot;,
+      &quot;description&quot;: &quot;Materi latihan bahasa inggris untuk siswa sekolah.&quot;
+    },
+    {
+      &quot;id&quot;: 4,
+      &quot;code&quot;: &quot;PPL&quot;,
+      &quot;name&quot;: &quot;Pemrograman Dasar&quot;,
+      &quot;description&quot;: &quot;Materi latihan pemrograman dasar untuk siswa sekolah.&quot;
+    },
+    {
+      &quot;id&quot;: 5,
+      &quot;code&quot;: &quot;BAS&quot;,
+      &quot;name&quot;: &quot;Basis Data&quot;,
+      &quot;description&quot;: &quot;Materi latihan basis data untuk siswa sekolah.&quot;
+    },
+    {
+      &quot;id&quot;: 6,
+      &quot;code&quot;: &quot;JAR&quot;,
+      &quot;name&quot;: &quot;Jaringan Komputer&quot;,
+      &quot;description&quot;: &quot;Materi latihan jaringan komputer untuk siswa sekolah.&quot;
+    },
+    {
+      &quot;id&quot;: 7,
+      &quot;code&quot;: &quot;DKV&quot;,
+      &quot;name&quot;: &quot;Desain Komunikasi Visual&quot;,
+      &quot;description&quot;: &quot;Materi latihan desain komunikasi visual untuk siswa sekolah.&quot;
+    },
+    {
+      &quot;id&quot;: 8,
+      &quot;code&quot;: &quot;PJOK&quot;,
+      &quot;name&quot;: &quot;Pendidikan Jasmani&quot;,
+      &quot;description&quot;: &quot;Materi latihan pendidikan jasmani untuk siswa sekolah.&quot;
+    },
+    {
+      &quot;id&quot;: 9,
+      &quot;code&quot;: &quot;PKN&quot;,
+      &quot;name&quot;: &quot;Pendidikan Pancasila&quot;,
+      &quot;description&quot;: &quot;Hak, kewajiban, musyawarah, dan tanggung jawab sebagai warga negara.&quot;
+    },
+    {
+      &quot;id&quot;: 10,
+      &quot;code&quot;: &quot;PKK&quot;,
+      &quot;name&quot;: &quot;Produk Kreatif dan Kewirausahaan&quot;,
+      &quot;description&quot;: &quot;Perencanaan usaha sederhana, pengembangan produk, dan promosi digital.&quot;
+    }
+  ],
+  &quot;meta&quot;: {
+    &quot;page&quot;: 1,
+    &quot;limit&quot;: 10,
+    &quot;total&quot;: 10,
+    &quot;total_pages&quot;: 1
+  }
+}</code></pre><p class="muted">Error yang mungkin: 400, 500. Lihat tabel status dan aturan validasi.</p></div></details><details class="endpoint" data-search="Pelajaran Detail pelajaran /api/v1/subjects/:id" data-method="GET" data-phase="Utama"><summary><span class="method get">GET</span><code>/api/v1/subjects/:id</code><span class="endpoint-title">Detail pelajaran</span><span class="access">Publik</span></summary><div class="endpoint-body"><p><span class="chip">Utama</span> <span class="chip">Pelajaran</span></p><p>ID integer positif. Respons menggunakan ID relasi; ambil nama relasi dari endpoint terkait. Data tidak ditemukan menghasilkan 404.</p><h4>Request body</h4><p class="muted">Tidak ada body.</p><h4>Respons 200</h4><pre><code>{
+  &quot;success&quot;: true,
+  &quot;message&quot;: &quot;Data berhasil diambil.&quot;,
+  &quot;data&quot;: {
+    &quot;id&quot;: 1,
+    &quot;code&quot;: &quot;MTK&quot;,
+    &quot;name&quot;: &quot;Matematika&quot;,
+    &quot;description&quot;: &quot;Materi latihan matematika untuk siswa sekolah.&quot;
+  }
+}</code></pre><p class="muted">Error yang mungkin: 400, 404, 500. Lihat tabel status dan aturan validasi.</p></div></details><details class="endpoint" data-search="Pelajaran Simulasi edit pelajaran /api/v1/subjects/:id" data-method="PATCH" data-phase="Lanjutan"><summary><span class="method patch">PATCH</span><code>/api/v1/subjects/:id</code><span class="endpoint-title">Simulasi edit pelajaran</span><span class="access">Admin</span></summary><div class="endpoint-body"><p><span class="chip">Lanjutan</span> <span class="chip">Pelajaran</span></p><p>Ubah sebagian field yang diizinkan. Validasi berdasarkan fixture awal. Response menampilkan hasil penggabungan; GET berikutnya tetap membaca data awal. Tidak menyimpan perubahan.</p><h4>Request body</h4><pre><code>{
+  &quot;name&quot;: &quot;Matematika Dasar&quot;,
+  &quot;description&quot;: &quot;Pengantar matematika.&quot;
+}</code></pre><h4>Respons 200</h4><pre><code>{
+  &quot;success&quot;: true,
+  &quot;message&quot;: &quot;Simulasi perubahan berhasil. Data tidak disimpan.&quot;,
+  &quot;data&quot;: {
+    &quot;id&quot;: 1,
+    &quot;code&quot;: &quot;MTK&quot;,
+    &quot;name&quot;: &quot;Matematika Dasar&quot;,
+    &quot;description&quot;: &quot;Pengantar matematika.&quot;
+  },
+  &quot;meta&quot;: {
+    &quot;simulation&quot;: true,
+    &quot;persisted&quot;: false
+  }
+}</code></pre><p class="muted">Error yang mungkin: 400, 401, 403, 404, 409, 422, 500, 503, 413, 415. Lihat tabel status dan aturan validasi.</p></div></details><details class="endpoint" data-search="Pelajaran Simulasi hapus pelajaran /api/v1/subjects/:id" data-method="DELETE" data-phase="Lanjutan"><summary><span class="method delete">DELETE</span><code>/api/v1/subjects/:id</code><span class="endpoint-title">Simulasi hapus pelajaran</span><span class="access">Admin</span></summary><div class="endpoint-body"><p><span class="chip">Lanjutan</span> <span class="chip">Pelajaran</span></p><p>Periksa ID pada fixture, lalu kembalikan konfirmasi. Tidak menghapus data atau menjalankan cascade; relasi tetap sama. Dipanggil lagi pada ID yang sama tetap sukses selama ID ada pada fixture.</p><h4>Request body</h4><p class="muted">Tidak ada body.</p><h4>Respons 200</h4><pre><code>{
+  &quot;success&quot;: true,
+  &quot;message&quot;: &quot;Simulasi penghapusan berhasil. Data awal tetap tersedia.&quot;,
+  &quot;data&quot;: {
+    &quot;id&quot;: 1
+  },
+  &quot;meta&quot;: {
+    &quot;simulation&quot;: true,
+    &quot;persisted&quot;: false
+  }
+}</code></pre><p class="muted">Error yang mungkin: 400, 401, 403, 404, 500, 503. Lihat tabel status dan aturan validasi.</p></div></details><details class="endpoint" data-search="Berita Daftar berita /api/v1/news" data-method="GET" data-phase="Utama"><summary><span class="method get">GET</span><code>/api/v1/news</code><span class="endpoint-title">Daftar berita</span><span class="access">Publik</span></summary><div class="endpoint-body"><p><span class="chip">Utama</span> <span class="chip">Berita</span></p><p>Cari pada title, excerpt. Filter: category (kegiatan/prestasi/pengumuman). Sorting diizinkan: id, title, published_at. Contoh respons memakai data fixture. Maksimal 10 item ditampilkan pada halaman pertama dengan pengaturan default.</p><h4>Request body</h4><p class="muted">Tidak ada body.</p><h4>Respons 200</h4><pre><code>{
+  &quot;success&quot;: true,
+  &quot;message&quot;: &quot;Data berhasil diambil.&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;id&quot;: 10,
+      &quot;title&quot;: &quot;Tim Basket Meraih Juara Persahabatan&quot;,
+      &quot;slug&quot;: &quot;tim-basket-meraih-juara-persahabatan&quot;,
+      &quot;excerpt&quot;: &quot;Tim basket SekolahLab meraih juara dalam turnamen persahabatan antarkelas.&quot;,
+      &quot;content&quot;: &quot;Turnamen persahabatan berlangsung di lapangan sekolah dengan peserta dari berbagai kelas. Tim pemenang dinilai berdasarkan hasil pertandingan dan sportivitas. Berita ini adalah data fiktif untuk pembelajaran, bukan laporan kejadian nyata.&quot;,
+      &quot;image_url&quot;: &quot;https://images.unsplash.com/photo-1567167773757-cadd90d1d4a6?auto=format&amp;fit=crop&amp;w=1200&amp;h=675&amp;q=80&quot;,
+      &quot;author_id&quot;: 1,
+      &quot;category&quot;: &quot;prestasi&quot;,
+      &quot;published_at&quot;: &quot;2026-09-10T01:00:00Z&quot;
+    },
+    {
+      &quot;id&quot;: 9,
+      &quot;title&quot;: &quot;Klub Baca Membuka Pendaftaran&quot;,
+      &quot;slug&quot;: &quot;klub-baca-membuka-pendaftaran&quot;,
+      &quot;excerpt&quot;: &quot;Klub baca menerima anggota baru untuk diskusi buku mingguan.&quot;,
+      &quot;content&quot;: &quot;Pendaftaran klub baca dibuka pada 9–16 September 2026 melalui wali kelas. Anggota dapat membawa buku favorit untuk diskusi perdana di perpustakaan. Kegiatan dan identitas dalam berita ini bersifat fiktif untuk latihan frontend.&quot;,
+      &quot;image_url&quot;: &quot;https://images.unsplash.com/photo-1660606422342-2ce59709bb14?auto=format&amp;fit=crop&amp;w=1200&amp;h=675&amp;q=80&quot;,
+      &quot;author_id&quot;: 4,
+      &quot;category&quot;: &quot;pengumuman&quot;,
+      &quot;published_at&quot;: &quot;2026-09-09T01:00:00Z&quot;
+    },
+    {
+      &quot;id&quot;: 8,
+      &quot;title&quot;: &quot;Workshop Keamanan Digital&quot;,
+      &quot;slug&quot;: &quot;workshop-keamanan-digital&quot;,
+      &quot;excerpt&quot;: &quot;Workshop Keamanan Digital di SekolahLab, contoh berita untuk latihan frontend.&quot;,
+      &quot;content&quot;: &quot;Ini adalah berita fiktif untuk pembelajaran. Workshop Keamanan Digital menjadi bagian dari kegiatan warga SekolahLab. Data ini dibuat sebagai contoh tampilan daftar dan detail berita.&quot;,
+      &quot;image_url&quot;: &quot;https://images.unsplash.com/photo-1555209183-8facf96a4349?auto=format&amp;fit=crop&amp;w=1200&amp;h=675&amp;q=80&quot;,
+      &quot;author_id&quot;: 1,
+      &quot;category&quot;: &quot;kegiatan&quot;,
+      &quot;published_at&quot;: &quot;2026-09-08T01:00:00Z&quot;
+    },
+    {
+      &quot;id&quot;: 7,
+      &quot;title&quot;: &quot;Informasi Perpustakaan&quot;,
+      &quot;slug&quot;: &quot;informasi-perpustakaan&quot;,
+      &quot;excerpt&quot;: &quot;Informasi Perpustakaan di SekolahLab, contoh berita untuk latihan frontend.&quot;,
+      &quot;content&quot;: &quot;Ini adalah berita fiktif untuk pembelajaran. Informasi Perpustakaan menjadi bagian dari kegiatan warga SekolahLab. Data ini dibuat sebagai contoh tampilan daftar dan detail berita.&quot;,
+      &quot;image_url&quot;: &quot;https://images.unsplash.com/photo-1749660354104-9a5ab1225805?auto=format&amp;fit=crop&amp;w=1200&amp;h=675&amp;q=80&quot;,
+      &quot;author_id&quot;: 2,
+      &quot;category&quot;: &quot;pengumuman&quot;,
+      &quot;published_at&quot;: &quot;2026-09-07T01:00:00Z&quot;
+    },
+    {
+      &quot;id&quot;: 6,
+      &quot;title&quot;: &quot;Prestasi Tim Olahraga&quot;,
+      &quot;slug&quot;: &quot;prestasi-tim-olahraga&quot;,
+      &quot;excerpt&quot;: &quot;Prestasi Tim Olahraga di SekolahLab, contoh berita untuk latihan frontend.&quot;,
+      &quot;content&quot;: &quot;Ini adalah berita fiktif untuk pembelajaran. Prestasi Tim Olahraga menjadi bagian dari kegiatan warga SekolahLab. Data ini dibuat sebagai contoh tampilan daftar dan detail berita.&quot;,
+      &quot;image_url&quot;: &quot;https://images.unsplash.com/photo-1567167773757-cadd90d1d4a6?auto=format&amp;fit=crop&amp;w=1200&amp;h=675&amp;q=80&quot;,
+      &quot;author_id&quot;: 1,
+      &quot;category&quot;: &quot;prestasi&quot;,
+      &quot;published_at&quot;: &quot;2026-09-06T01:00:00Z&quot;
+    },
+    {
+      &quot;id&quot;: 5,
+      &quot;title&quot;: &quot;Pameran Karya Desain&quot;,
+      &quot;slug&quot;: &quot;pameran-karya-desain&quot;,
+      &quot;excerpt&quot;: &quot;Pameran Karya Desain di SekolahLab, contoh berita untuk latihan frontend.&quot;,
+      &quot;content&quot;: &quot;Ini adalah berita fiktif untuk pembelajaran. Pameran Karya Desain menjadi bagian dari kegiatan warga SekolahLab. Data ini dibuat sebagai contoh tampilan daftar dan detail berita.&quot;,
+      &quot;image_url&quot;: &quot;https://images.unsplash.com/photo-1555209183-8facf96a4349?auto=format&amp;fit=crop&amp;w=1200&amp;h=675&amp;q=80&quot;,
+      &quot;author_id&quot;: 2,
+      &quot;category&quot;: &quot;kegiatan&quot;,
+      &quot;published_at&quot;: &quot;2026-09-05T01:00:00Z&quot;
+    },
+    {
+      &quot;id&quot;: 4,
+      &quot;title&quot;: &quot;Kegiatan Pramuka Bersama&quot;,
+      &quot;slug&quot;: &quot;kegiatan-pramuka-bersama&quot;,
+      &quot;excerpt&quot;: &quot;Kegiatan Pramuka Bersama di SekolahLab, contoh berita untuk latihan frontend.&quot;,
+      &quot;content&quot;: &quot;Ini adalah berita fiktif untuk pembelajaran. Kegiatan Pramuka Bersama menjadi bagian dari kegiatan warga SekolahLab. Data ini dibuat sebagai contoh tampilan daftar dan detail berita.&quot;,
+      &quot;image_url&quot;: &quot;https://images.unsplash.com/photo-1660606422342-2ce59709bb14?auto=format&amp;fit=crop&amp;w=1200&amp;h=675&amp;q=80&quot;,
+      &quot;author_id&quot;: 1,
+      &quot;category&quot;: &quot;kegiatan&quot;,
+      &quot;published_at&quot;: &quot;2026-09-04T01:00:00Z&quot;
+    },
+    {
+      &quot;id&quot;: 3,
+      &quot;title&quot;: &quot;Jadwal Pembagian Rapor&quot;,
+      &quot;slug&quot;: &quot;jadwal-pembagian-rapor&quot;,
+      &quot;excerpt&quot;: &quot;Jadwal Pembagian Rapor di SekolahLab, contoh berita untuk latihan frontend.&quot;,
+      &quot;content&quot;: &quot;Ini adalah berita fiktif untuk pembelajaran. Jadwal Pembagian Rapor menjadi bagian dari kegiatan warga SekolahLab. Data ini dibuat sebagai contoh tampilan daftar dan detail berita.&quot;,
+      &quot;image_url&quot;: &quot;https://images.unsplash.com/photo-1660606422342-2ce59709bb14?auto=format&amp;fit=crop&amp;w=1200&amp;h=675&amp;q=80&quot;,
+      &quot;author_id&quot;: 2,
+      &quot;category&quot;: &quot;pengumuman&quot;,
+      &quot;published_at&quot;: &quot;2026-09-03T01:00:00Z&quot;
+    },
+    {
+      &quot;id&quot;: 2,
+      &quot;title&quot;: &quot;Juara Lomba Pemrograman&quot;,
+      &quot;slug&quot;: &quot;juara-lomba-pemrograman&quot;,
+      &quot;excerpt&quot;: &quot;Juara Lomba Pemrograman di SekolahLab, contoh berita untuk latihan frontend.&quot;,
+      &quot;content&quot;: &quot;Ini adalah berita fiktif untuk pembelajaran. Juara Lomba Pemrograman menjadi bagian dari kegiatan warga SekolahLab. Data ini dibuat sebagai contoh tampilan daftar dan detail berita.&quot;,
+      &quot;image_url&quot;: &quot;https://images.unsplash.com/photo-1555209183-8facf96a4349?auto=format&amp;fit=crop&amp;w=1200&amp;h=675&amp;q=80&quot;,
+      &quot;author_id&quot;: 1,
+      &quot;category&quot;: &quot;prestasi&quot;,
+      &quot;published_at&quot;: &quot;2026-09-02T01:00:00Z&quot;
+    },
+    {
+      &quot;id&quot;: 1,
+      &quot;title&quot;: &quot;Pekan Literasi Sekolah&quot;,
+      &quot;slug&quot;: &quot;pekan-literasi-sekolah&quot;,
+      &quot;excerpt&quot;: &quot;Pekan Literasi Sekolah di SekolahLab, contoh berita untuk latihan frontend.&quot;,
+      &quot;content&quot;: &quot;Ini adalah berita fiktif untuk pembelajaran. Pekan Literasi Sekolah menjadi bagian dari kegiatan warga SekolahLab. Data ini dibuat sebagai contoh tampilan daftar dan detail berita.&quot;,
+      &quot;image_url&quot;: &quot;https://images.unsplash.com/photo-1749660354104-9a5ab1225805?auto=format&amp;fit=crop&amp;w=1200&amp;h=675&amp;q=80&quot;,
+      &quot;author_id&quot;: 2,
+      &quot;category&quot;: &quot;kegiatan&quot;,
+      &quot;published_at&quot;: &quot;2026-09-01T01:00:00Z&quot;
+    }
+  ],
+  &quot;meta&quot;: {
+    &quot;page&quot;: 1,
+    &quot;limit&quot;: 10,
+    &quot;total&quot;: 10,
+    &quot;total_pages&quot;: 1
+  }
+}</code></pre><p class="muted">Error yang mungkin: 400, 500. Lihat tabel status dan aturan validasi.</p></div></details><details class="endpoint" data-search="Berita Detail berita /api/v1/news/:id" data-method="GET" data-phase="Utama"><summary><span class="method get">GET</span><code>/api/v1/news/:id</code><span class="endpoint-title">Detail berita</span><span class="access">Publik</span></summary><div class="endpoint-body"><p><span class="chip">Utama</span> <span class="chip">Berita</span></p><p>ID integer positif. Respons menggunakan ID relasi; ambil nama relasi dari endpoint terkait. Data tidak ditemukan menghasilkan 404.</p><h4>Request body</h4><p class="muted">Tidak ada body.</p><h4>Respons 200</h4><pre><code>{
+  &quot;success&quot;: true,
+  &quot;message&quot;: &quot;Data berhasil diambil.&quot;,
+  &quot;data&quot;: {
+    &quot;id&quot;: 1,
+    &quot;title&quot;: &quot;Pekan Literasi Sekolah&quot;,
+    &quot;slug&quot;: &quot;pekan-literasi-sekolah&quot;,
+    &quot;excerpt&quot;: &quot;Pekan Literasi Sekolah di SekolahLab, contoh berita untuk latihan frontend.&quot;,
+    &quot;content&quot;: &quot;Ini adalah berita fiktif untuk pembelajaran. Pekan Literasi Sekolah menjadi bagian dari kegiatan warga SekolahLab. Data ini dibuat sebagai contoh tampilan daftar dan detail berita.&quot;,
+    &quot;image_url&quot;: &quot;https://images.unsplash.com/photo-1749660354104-9a5ab1225805?auto=format&amp;fit=crop&amp;w=1200&amp;h=675&amp;q=80&quot;,
+    &quot;author_id&quot;: 2,
+    &quot;category&quot;: &quot;kegiatan&quot;,
+    &quot;published_at&quot;: &quot;2026-09-01T01:00:00Z&quot;
+  }
+}</code></pre><p class="muted">Error yang mungkin: 400, 404, 500. Lihat tabel status dan aturan validasi.</p></div></details><details class="endpoint" data-search="Berita Simulasi edit berita /api/v1/news/:id" data-method="PATCH" data-phase="Lanjutan"><summary><span class="method patch">PATCH</span><code>/api/v1/news/:id</code><span class="endpoint-title">Simulasi edit berita</span><span class="access">Admin</span></summary><div class="endpoint-body"><p><span class="chip">Lanjutan</span> <span class="chip">Berita</span></p><p>Ubah sebagian field yang diizinkan. Validasi berdasarkan fixture awal. Response menampilkan hasil penggabungan; GET berikutnya tetap membaca data awal. Tidak menyimpan perubahan.</p><h4>Request body</h4><pre><code>{
+  &quot;title&quot;: &quot;Pekan Literasi 2026&quot;,
+  &quot;excerpt&quot;: &quot;Kegiatan literasi bersama.&quot;
+}</code></pre><h4>Respons 200</h4><pre><code>{
+  &quot;success&quot;: true,
+  &quot;message&quot;: &quot;Simulasi perubahan berhasil. Data tidak disimpan.&quot;,
+  &quot;data&quot;: {
+    &quot;id&quot;: 1,
+    &quot;title&quot;: &quot;Pekan Literasi 2026&quot;,
+    &quot;slug&quot;: &quot;pekan-literasi-sekolah&quot;,
+    &quot;excerpt&quot;: &quot;Kegiatan literasi bersama.&quot;,
+    &quot;content&quot;: &quot;Ini adalah berita fiktif untuk pembelajaran. Pekan Literasi Sekolah menjadi bagian dari kegiatan warga SekolahLab. Data ini dibuat sebagai contoh tampilan daftar dan detail berita.&quot;,
+    &quot;image_url&quot;: &quot;https://images.unsplash.com/photo-1749660354104-9a5ab1225805?auto=format&amp;fit=crop&amp;w=1200&amp;h=675&amp;q=80&quot;,
+    &quot;author_id&quot;: 2,
+    &quot;category&quot;: &quot;kegiatan&quot;,
+    &quot;published_at&quot;: &quot;2026-09-01T01:00:00Z&quot;
+  },
+  &quot;meta&quot;: {
+    &quot;simulation&quot;: true,
+    &quot;persisted&quot;: false
+  }
+}</code></pre><p class="muted">Error yang mungkin: 400, 401, 403, 404, 409, 422, 500, 503, 413, 415. Lihat tabel status dan aturan validasi.</p></div></details><details class="endpoint" data-search="Berita Simulasi hapus berita /api/v1/news/:id" data-method="DELETE" data-phase="Lanjutan"><summary><span class="method delete">DELETE</span><code>/api/v1/news/:id</code><span class="endpoint-title">Simulasi hapus berita</span><span class="access">Admin</span></summary><div class="endpoint-body"><p><span class="chip">Lanjutan</span> <span class="chip">Berita</span></p><p>Periksa ID pada fixture, lalu kembalikan konfirmasi. Tidak menghapus data atau menjalankan cascade; relasi tetap sama. Dipanggil lagi pada ID yang sama tetap sukses selama ID ada pada fixture.</p><h4>Request body</h4><p class="muted">Tidak ada body.</p><h4>Respons 200</h4><pre><code>{
+  &quot;success&quot;: true,
+  &quot;message&quot;: &quot;Simulasi penghapusan berhasil. Data awal tetap tersedia.&quot;,
+  &quot;data&quot;: {
+    &quot;id&quot;: 1
+  },
+  &quot;meta&quot;: {
+    &quot;simulation&quot;: true,
+    &quot;persisted&quot;: false
+  }
+}</code></pre><p class="muted">Error yang mungkin: 400, 401, 403, 404, 500, 503. Lihat tabel status dan aturan validasi.</p></div></details><details class="endpoint" data-search="Kelas Daftar kelas /api/v1/classes" data-method="GET" data-phase="Pendukung"><summary><span class="method get">GET</span><code>/api/v1/classes</code><span class="endpoint-title">Daftar kelas</span><span class="access">Publik</span></summary><div class="endpoint-body"><p><span class="chip">Pendukung</span> <span class="chip">Kelas</span></p><p>Untuk pilihan filter dan menampilkan label relasi. Mendukung page, limit, search (name/code untuk jurusan; name untuk kelas), sort (id/name), order. Kelas juga mendukung major_id dan grade (10/11/12).</p><h4>Request body</h4><p class="muted">Tidak ada body.</p><h4>Respons 200</h4><pre><code>{
+  &quot;success&quot;: true,
+  &quot;message&quot;: &quot;Data berhasil diambil.&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;id&quot;: 1,
+      &quot;name&quot;: &quot;X RPL 1&quot;,
+      &quot;grade&quot;: 10,
+      &quot;major_id&quot;: 1,
+      &quot;homeroom_teacher_id&quot;: 1,
+      &quot;academic_year&quot;: &quot;2026/2027&quot;
+    },
+    {
+      &quot;id&quot;: 2,
+      &quot;name&quot;: &quot;X TKJ 1&quot;,
+      &quot;grade&quot;: 10,
+      &quot;major_id&quot;: 2,
+      &quot;homeroom_teacher_id&quot;: 2,
+      &quot;academic_year&quot;: &quot;2026/2027&quot;
+    },
+    {
+      &quot;id&quot;: 3,
+      &quot;name&quot;: &quot;X DKV 1&quot;,
+      &quot;grade&quot;: 10,
+      &quot;major_id&quot;: 3,
+      &quot;homeroom_teacher_id&quot;: 3,
+      &quot;academic_year&quot;: &quot;2026/2027&quot;
+    },
+    {
+      &quot;id&quot;: 4,
+      &quot;name&quot;: &quot;XI RPL 1&quot;,
+      &quot;grade&quot;: 11,
+      &quot;major_id&quot;: 1,
+      &quot;homeroom_teacher_id&quot;: 4,
+      &quot;academic_year&quot;: &quot;2026/2027&quot;
+    },
+    {
+      &quot;id&quot;: 5,
+      &quot;name&quot;: &quot;XI TKJ 1&quot;,
+      &quot;grade&quot;: 11,
+      &quot;major_id&quot;: 2,
+      &quot;homeroom_teacher_id&quot;: 5,
+      &quot;academic_year&quot;: &quot;2026/2027&quot;
+    },
+    {
+      &quot;id&quot;: 6,
+      &quot;name&quot;: &quot;XI DKV 1&quot;,
+      &quot;grade&quot;: 11,
+      &quot;major_id&quot;: 3,
+      &quot;homeroom_teacher_id&quot;: 6,
+      &quot;academic_year&quot;: &quot;2026/2027&quot;
+    },
+    {
+      &quot;id&quot;: 7,
+      &quot;name&quot;: &quot;X AKL 1&quot;,
+      &quot;grade&quot;: 10,
+      &quot;major_id&quot;: 4,
+      &quot;homeroom_teacher_id&quot;: 7,
+      &quot;academic_year&quot;: &quot;2026/2027&quot;
+    },
+    {
+      &quot;id&quot;: 8,
+      &quot;name&quot;: &quot;X MPLB 1&quot;,
+      &quot;grade&quot;: 10,
+      &quot;major_id&quot;: 5,
+      &quot;homeroom_teacher_id&quot;: 8,
+      &quot;academic_year&quot;: &quot;2026/2027&quot;
+    },
+    {
+      &quot;id&quot;: 9,
+      &quot;name&quot;: &quot;X PM 1&quot;,
+      &quot;grade&quot;: 10,
+      &quot;major_id&quot;: 6,
+      &quot;homeroom_teacher_id&quot;: 9,
+      &quot;academic_year&quot;: &quot;2026/2027&quot;
+    },
+    {
+      &quot;id&quot;: 10,
+      &quot;name&quot;: &quot;X TKR 1&quot;,
+      &quot;grade&quot;: 10,
+      &quot;major_id&quot;: 7,
+      &quot;homeroom_teacher_id&quot;: 10,
+      &quot;academic_year&quot;: &quot;2026/2027&quot;
+    }
+  ],
+  &quot;meta&quot;: {
+    &quot;page&quot;: 1,
+    &quot;limit&quot;: 10,
+    &quot;total&quot;: 13,
+    &quot;total_pages&quot;: 2
+  }
+}</code></pre><p class="muted">Error yang mungkin: 400, 500. Lihat tabel status dan aturan validasi.</p></div></details><details class="endpoint" data-search="Kelas Detail kelas /api/v1/classes/:id" data-method="GET" data-phase="Pendukung"><summary><span class="method get">GET</span><code>/api/v1/classes/:id</code><span class="endpoint-title">Detail kelas</span><span class="access">Publik</span></summary><div class="endpoint-body"><p><span class="chip">Pendukung</span> <span class="chip">Kelas</span></p><p>Ambil data pendukung berdasarkan ID integer positif.</p><h4>Request body</h4><p class="muted">Tidak ada body.</p><h4>Respons 200</h4><pre><code>{
+  &quot;success&quot;: true,
+  &quot;message&quot;: &quot;Data berhasil diambil.&quot;,
+  &quot;data&quot;: {
+    &quot;id&quot;: 1,
+    &quot;name&quot;: &quot;X RPL 1&quot;,
+    &quot;grade&quot;: 10,
+    &quot;major_id&quot;: 1,
+    &quot;homeroom_teacher_id&quot;: 1,
+    &quot;academic_year&quot;: &quot;2026/2027&quot;
+  }
+}</code></pre><p class="muted">Error yang mungkin: 400, 404, 500. Lihat tabel status dan aturan validasi.</p></div></details><details class="endpoint" data-search="Jurusan Daftar jurusan /api/v1/majors" data-method="GET" data-phase="Pendukung"><summary><span class="method get">GET</span><code>/api/v1/majors</code><span class="endpoint-title">Daftar jurusan</span><span class="access">Publik</span></summary><div class="endpoint-body"><p><span class="chip">Pendukung</span> <span class="chip">Jurusan</span></p><p>Untuk pilihan filter dan menampilkan label relasi. Mendukung page, limit, search (name/code untuk jurusan; name untuk kelas), sort (id/name), order. Kelas juga mendukung major_id dan grade (10/11/12).</p><h4>Request body</h4><p class="muted">Tidak ada body.</p><h4>Respons 200</h4><pre><code>{
+  &quot;success&quot;: true,
+  &quot;message&quot;: &quot;Data berhasil diambil.&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;id&quot;: 1,
+      &quot;code&quot;: &quot;RPL&quot;,
+      &quot;name&quot;: &quot;Rekayasa Perangkat Lunak&quot;,
+      &quot;description&quot;: &quot;Program pembelajaran rekayasa perangkat lunak.&quot;
+    },
+    {
+      &quot;id&quot;: 2,
+      &quot;code&quot;: &quot;TKJ&quot;,
+      &quot;name&quot;: &quot;Teknik Komputer dan Jaringan&quot;,
+      &quot;description&quot;: &quot;Program pembelajaran teknik komputer dan jaringan.&quot;
+    },
+    {
+      &quot;id&quot;: 3,
+      &quot;code&quot;: &quot;DKV&quot;,
+      &quot;name&quot;: &quot;Desain Komunikasi Visual&quot;,
+      &quot;description&quot;: &quot;Program pembelajaran desain komunikasi visual.&quot;
+    },
+    {
+      &quot;id&quot;: 4,
+      &quot;code&quot;: &quot;AKL&quot;,
+      &quot;name&quot;: &quot;Akuntansi dan Keuangan Lembaga&quot;,
+      &quot;description&quot;: &quot;Program pembelajaran akuntansi dan keuangan lembaga dengan praktik berbasis proyek.&quot;
+    },
+    {
+      &quot;id&quot;: 5,
+      &quot;code&quot;: &quot;MPLB&quot;,
+      &quot;name&quot;: &quot;Manajemen Perkantoran dan Layanan Bisnis&quot;,
+      &quot;description&quot;: &quot;Program pembelajaran manajemen perkantoran dan layanan bisnis dengan praktik berbasis proyek.&quot;
+    },
+    {
+      &quot;id&quot;: 6,
+      &quot;code&quot;: &quot;PM&quot;,
+      &quot;name&quot;: &quot;Pemasaran&quot;,
+      &quot;description&quot;: &quot;Program pembelajaran pemasaran dengan praktik berbasis proyek.&quot;
+    },
+    {
+      &quot;id&quot;: 7,
+      &quot;code&quot;: &quot;TKR&quot;,
+      &quot;name&quot;: &quot;Teknik Kendaraan Ringan&quot;,
+      &quot;description&quot;: &quot;Program pembelajaran teknik kendaraan ringan dengan praktik berbasis proyek.&quot;
+    },
+    {
+      &quot;id&quot;: 8,
+      &quot;code&quot;: &quot;TSM&quot;,
+      &quot;name&quot;: &quot;Teknik Sepeda Motor&quot;,
+      &quot;description&quot;: &quot;Program pembelajaran teknik sepeda motor dengan praktik berbasis proyek.&quot;
+    },
+    {
+      &quot;id&quot;: 9,
+      &quot;code&quot;: &quot;KUL&quot;,
+      &quot;name&quot;: &quot;Kuliner&quot;,
+      &quot;description&quot;: &quot;Program pembelajaran kuliner dengan praktik berbasis proyek.&quot;
+    },
+    {
+      &quot;id&quot;: 10,
+      &quot;code&quot;: &quot;PH&quot;,
+      &quot;name&quot;: &quot;Perhotelan&quot;,
+      &quot;description&quot;: &quot;Program pembelajaran perhotelan dengan praktik berbasis proyek.&quot;
+    }
+  ],
+  &quot;meta&quot;: {
+    &quot;page&quot;: 1,
+    &quot;limit&quot;: 10,
+    &quot;total&quot;: 10,
+    &quot;total_pages&quot;: 1
+  }
+}</code></pre><p class="muted">Error yang mungkin: 400, 500. Lihat tabel status dan aturan validasi.</p></div></details><details class="endpoint" data-search="Jurusan Detail jurusan /api/v1/majors/:id" data-method="GET" data-phase="Pendukung"><summary><span class="method get">GET</span><code>/api/v1/majors/:id</code><span class="endpoint-title">Detail jurusan</span><span class="access">Publik</span></summary><div class="endpoint-body"><p><span class="chip">Pendukung</span> <span class="chip">Jurusan</span></p><p>Ambil data pendukung berdasarkan ID integer positif.</p><h4>Request body</h4><p class="muted">Tidak ada body.</p><h4>Respons 200</h4><pre><code>{
+  &quot;success&quot;: true,
+  &quot;message&quot;: &quot;Data berhasil diambil.&quot;,
+  &quot;data&quot;: {
+    &quot;id&quot;: 1,
+    &quot;code&quot;: &quot;RPL&quot;,
+    &quot;name&quot;: &quot;Rekayasa Perangkat Lunak&quot;,
+    &quot;description&quot;: &quot;Program pembelajaran rekayasa perangkat lunak.&quot;
+  }
+}</code></pre><p class="muted">Error yang mungkin: 400, 404, 500. Lihat tabel status dan aturan validasi.</p></div></details><details class="endpoint" data-search="Sistem Status API /api/v1/health" data-method="GET" data-phase="Pendukung"><summary><span class="method get">GET</span><code>/api/v1/health</code><span class="endpoint-title">Status API</span><span class="access">Publik</span></summary><div class="endpoint-body"><p><span class="chip">Pendukung</span> <span class="chip">Sistem</span></p><p>Memastikan function merespons. Tidak memeriksa database karena backend tidak memakai database.</p><h4>Request body</h4><p class="muted">Tidak ada body.</p><h4>Respons 200</h4><pre><code>{
+  &quot;success&quot;: true,
+  &quot;message&quot;: &quot;Data berhasil diambil.&quot;,
+  &quot;data&quot;: {
+    &quot;service&quot;: &quot;sekolahlab-api&quot;,
+    &quot;status&quot;: &quot;ok&quot;,
+    &quot;version&quot;: &quot;v1&quot;
+  }
+}</code></pre><p class="muted">Error yang mungkin: 500. Lihat tabel status dan aturan validasi.</p></div></details></div><p id="empty" hidden>Tidak ada endpoint yang cocok. Ubah kata pencarian atau filter.</p></section><section id="queries"><span class="eyebrow">KONTRAK V1</span><h2>Query pencarian dan pagination.</h2><div class="table-wrap"><table><thead><tr><th>Parameter</th><th>Aturan</th><th>Contoh</th></tr></thead><tbody><tr><td>page</td><td>Integer ≥1. Default 1.</td><td>page=2</td></tr><tr><td>limit</td><td>Integer 1–100. Default 10.</td><td>limit=10</td></tr><tr><td>search</td><td>Teks, trim, maksimal 100 karakter. Substring tanpa membedakan huruf besar/kecil; kosong berarti tanpa pencarian.</td><td>search=alya</td></tr><tr><td>sort</td><td>Satu field dari daftar yang diizinkan pada endpoint. Default id, kecuali berita published_at.</td><td>sort=name</td></tr><tr><td>order</td><td>asc atau desc. Default asc, kecuali berita desc.</td><td>order=asc</td></tr><tr><td>class_id / subject_id / major_id</td><td>Integer positif; hanya berlaku pada endpoint yang menyebutkannya.</td><td>class_id=1</td></tr><tr><td>gender</td><td>male atau female; siswa dan guru.</td><td>gender=female</td></tr><tr><td>grade</td><td>10, 11, atau 12; hanya kelas.</td><td>grade=10</td></tr><tr><td>category</td><td>kegiatan, prestasi, pengumuman; hanya berita.</td><td>category=kegiatan</td></tr></tbody></table></div><pre><code>GET /api/v1/students?search=alya&amp;class_id=1&amp;page=1&amp;limit=10
+GET /api/v1/teachers?subject_id=1&amp;sort=name&amp;order=asc
+GET /api/v1/news?category=kegiatan&amp;sort=published_at&amp;order=desc</code></pre><p>Filter digabung dengan AND → sorting → pagination. Nilai sort yang sama diurutkan lagi berdasarkan ID naik agar stabil. <code>meta.total</code> adalah jumlah setelah filter, sebelum pagination. Halaman melebihi hasil mengembalikan 200 dengan <code>data: []</code>. Tanpa hasil, <code>total: 0</code> dan <code>total_pages: 0</code>.</p><p>Parameter tidak dikenal, parameter berulang, integer tidak valid, enum tidak sesuai, atau field sort tidak diizinkan menghasilkan 400. Filter ID yang formatnya valid tetapi tidak ada menghasilkan daftar kosong. Detail menggunakan ID positif; ID valid yang tidak ada menghasilkan 404. Pada GET detail, query selain yang didokumentasikan ditolak.</p></section><section id="schemas"><span class="eyebrow">KONTRAK V1</span><h2>Struktur data dan relasi.</h2><p>Field memakai snake_case. ID adalah integer positif. Semua contoh memakai data fiktif. Nilai null hanya diizinkan jika disebutkan.</p><pre><code>users ← students.user_id     users ← teachers.user_id
+students.class_id → classes.id → majors.id (major_id)
+classes.homeroom_teacher_id → teachers.id
+teachers.subject_ids[] → subjects.id
+news.author_id → users.id</code></pre><h3>User</h3><p>Profil aman; password hash hanya berada pada fixture internal.</p><div class="table-wrap"><table><thead><tr><th>Field</th><th>Tipe</th><th>Keterangan</th></tr></thead><tbody><tr><td>id</td><td>integer</td><td>ID akun demo; null hanya pada respons register simulasi.</td></tr><tr><td>name</td><td>string</td><td>Nama pengguna.</td></tr><tr><td>email</td><td>string</td><td>Alamat email demo; unik pada fixture.</td></tr><tr><td>role</td><td>enum</td><td>admin | teacher | student</td></tr><tr><td>photo_url</td><td>string URL</td><td>Avatar ilustrasi DiceBear; tidak disertakan pada register simulasi.</td></tr></tbody></table></div><h3>Siswa</h3><p>Satu siswa terhubung dengan satu kelas.</p><div class="table-wrap"><table><thead><tr><th>Field</th><th>Tipe</th><th>Keterangan</th></tr></thead><tbody><tr><td>id</td><td>integer</td><td>ID siswa.</td></tr><tr><td>user_id</td><td>integer / null</td><td>Relasi ke akun demo; null bila siswa tidak memiliki akun demo.</td></tr><tr><td>nis</td><td>string</td><td>Nomor induk unik, mempertahankan nol di depan.</td></tr><tr><td>name</td><td>string</td><td>Nama fiktif.</td></tr><tr><td>gender</td><td>enum</td><td>male | female</td></tr><tr><td>birth_date</td><td>string</td><td>Tanggal valid YYYY-MM-DD, tidak di masa depan.</td></tr><tr><td>class_id</td><td>integer</td><td>Harus ada pada classes.</td></tr><tr><td>photo_url</td><td>string URL</td><td>Avatar ilustrasi, bukan foto asli.</td></tr></tbody></table></div><h3>Guru</h3><p>Satu guru bisa mengampu beberapa pelajaran.</p><div class="table-wrap"><table><thead><tr><th>Field</th><th>Tipe</th><th>Keterangan</th></tr></thead><tbody><tr><td>id</td><td>integer</td><td>ID guru.</td></tr><tr><td>user_id</td><td>integer / null</td><td>Relasi ke akun demo.</td></tr><tr><td>teacher_code</td><td>string</td><td>Kode guru unik pada fixture.</td></tr><tr><td>name</td><td>string</td><td>Nama fiktif.</td></tr><tr><td>gender</td><td>enum</td><td>male | female</td></tr><tr><td>subject_ids</td><td>integer[]</td><td>ID unik yang tersedia pada subjects; minimal satu.</td></tr><tr><td>photo_url</td><td>string URL</td><td>Avatar ilustrasi, bukan foto asli.</td></tr></tbody></table></div><h3>Pelajaran</h3><p>Daftar mata pelajaran.</p><div class="table-wrap"><table><thead><tr><th>Field</th><th>Tipe</th><th>Keterangan</th></tr></thead><tbody><tr><td>id</td><td>integer</td><td>ID pelajaran.</td></tr><tr><td>code</td><td>string</td><td>Kode unik pada fixture.</td></tr><tr><td>name</td><td>string</td><td>Nama pelajaran.</td></tr><tr><td>description</td><td>string</td><td>Deskripsi singkat.</td></tr></tbody></table></div><h3>Berita</h3><p>Berita contoh yang sudah dipublikasikan; tidak ada status draft pada versi awal.</p><div class="table-wrap"><table><thead><tr><th>Field</th><th>Tipe</th><th>Keterangan</th></tr></thead><tbody><tr><td>id</td><td>integer</td><td>ID berita.</td></tr><tr><td>title</td><td>string</td><td>Judul berita.</td></tr><tr><td>slug</td><td>string</td><td>Slug unik, hanya baca; detail menggunakan ID.</td></tr><tr><td>excerpt</td><td>string</td><td>Ringkasan berita.</td></tr><tr><td>content</td><td>string</td><td>Teks biasa, bukan HTML.</td></tr><tr><td>image_url</td><td>string URL</td><td>URL HTTPS gambar berita.</td></tr><tr><td>author_id</td><td>integer</td><td>ID users, bukan teachers; penulis harus akun admin/guru.</td></tr><tr><td>category</td><td>enum</td><td>kegiatan | prestasi | pengumuman</td></tr><tr><td>published_at</td><td>string</td><td>Waktu ISO 8601 UTC.</td></tr></tbody></table></div><h3>Kelas</h3><p>Kelas dengan satu jurusan dan wali kelas.</p><div class="table-wrap"><table><thead><tr><th>Field</th><th>Tipe</th><th>Keterangan</th></tr></thead><tbody><tr><td>id</td><td>integer</td><td>ID kelas.</td></tr><tr><td>name</td><td>string</td><td>Contoh X RPL 1.</td></tr><tr><td>grade</td><td>integer</td><td>10 | 11 | 12</td></tr><tr><td>major_id</td><td>integer</td><td>Relasi ke majors.</td></tr><tr><td>homeroom_teacher_id</td><td>integer</td><td>Relasi ke teachers.</td></tr><tr><td>academic_year</td><td>string</td><td>Contoh 2026/2027.</td></tr></tbody></table></div><h3>Jurusan</h3><p>Daftar jurusan sekolah.</p><div class="table-wrap"><table><thead><tr><th>Field</th><th>Tipe</th><th>Keterangan</th></tr></thead><tbody><tr><td>id</td><td>integer</td><td>ID jurusan.</td></tr><tr><td>code</td><td>string</td><td>Kode unik, misalnya RPL.</td></tr><tr><td>name</td><td>string</td><td>Nama jurusan.</td></tr><tr><td>description</td><td>string</td><td>Deskripsi singkat.</td></tr></tbody></table></div><div class="notice"><strong>Foto ilustrasi</strong><p>Contoh seed: <code>sekolahlab-student-001</code> dan <code>sekolahlab-teacher-001</code>. Seed stabil untuk setiap ID; hasil perlu dicek agar avatar fixture berbeda secara visual. Tidak menggunakan foto orang asli untuk siswa/guru.</p><p><a href="https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-001" target="_blank" rel="noreferrer">Lihat contoh siswa ↗</a> · <a href="https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-teacher-001" target="_blank" rel="noreferrer">Lihat contoh guru ↗</a></p></div></section><section id="mutations"><span class="eyebrow">KONTRAK V1</span><h2>Aturan edit dan hapus.</h2><p>PATCH memakai perubahan sebagian. Minimal satu field; body kosong, field asing, field hanya-baca, atau nilai null yang tidak diizinkan menghasilkan 422. Autentikasi diperiksa sebelum data resource. DELETE tidak membutuhkan body.</p><div class="table-wrap"><table><thead><tr><th>Resource</th><th>Field yang boleh diedit</th><th>Hanya baca</th></tr></thead><tbody><tr><td>Siswa</td><td>nis, name, gender, birth_date, class_id</td><td>id, user_id, photo_url</td></tr><tr><td>Guru</td><td>teacher_code, name, gender, subject_ids</td><td>id, user_id, photo_url</td></tr><tr><td>Pelajaran</td><td>code, name, description</td><td>id</td></tr><tr><td>Berita</td><td>title, excerpt, content, image_url, category</td><td>id, slug, author_id, published_at</td></tr></tbody></table></div><p>Nama/judul: 2–150 karakter. NIS/kode: 1–30 karakter, unik dengan perbandingan case-sensitive di fixture (kecuali record sendiri); duplikat menghasilkan 409. Deskripsi/ringkasan: 1–500 karakter. Isi berita: 1–10.000 karakter. URL berita: HTTPS valid, maksimal 2.048 karakter, tanpa username/password pada URL. Tanggal lahir harus tanggal kalender valid dan tidak di masa depan. class_id dan semua subject_ids wajib merujuk fixture yang ada; kesalahan relasi menghasilkan 422. Array subject_ids harus berisi integer positif unik dan minimal satu item.</p><p>Semua field string dipangkas spasinya sebelum validasi kecuali password. Edit tidak mengubah fixture akun users yang terhubung. Setiap PATCH selalu memakai data awal sebagai dasar, bukan hasil PATCH sebelumnya. Slug berita tetap sama meski judul dalam respons simulasi berubah.</p><p>Penghapusan relasi tidak disimulasikan secara berantai. Tidak ada endpoint tambah siswa/guru/pelajaran/berita di versi pertama; endpoint POST hanya untuk auth.</p></section><section id="responses"><span class="eyebrow">KONTRAK V1</span><h2>Format respons dan error.</h2><p>Respons API menggunakan <code>Content-Type: application/json</code>. GET detail dan auth mengembalikan objek pada data; daftar mengembalikan array beserta meta pagination. Respons endpoint utama selalu JSON. Preflight OPTIONS untuk CORS mengembalikan 204 tanpa body.</p><pre><code>{
+  &quot;success&quot;: false,
+  &quot;message&quot;: &quot;Validasi gagal.&quot;,
+  &quot;errors&quot;: {
+    &quot;name&quot;: [
+      &quot;Nama minimal 2 karakter.&quot;
+    ],
+    &quot;class_id&quot;: [
+      &quot;Kelas tidak ditemukan.&quot;
+    ]
+  }
+}</code></pre><div class="table-wrap"><table><thead><tr><th>Status</th><th>Makna</th></tr></thead><tbody><tr><td>200</td><td>GET, login, PATCH simulasi, atau DELETE simulasi berhasil.</td></tr><tr><td>201</td><td>Register simulasi berhasil; bukan bukti akun tersimpan.</td></tr><tr><td>400</td><td>JSON tidak bisa dibaca, ID path tidak valid, atau query tidak valid.</td></tr><tr><td>401</td><td>Kredensial salah atau token hilang/tidak valid/kedaluwarsa.</td></tr><tr><td>403</td><td>Token valid tetapi role bukan admin pada PATCH/DELETE.</td></tr><tr><td>404</td><td>ID tidak ditemukan atau path API tidak tersedia.</td></tr><tr><td>405</td><td>Path dikenal tetapi HTTP method tidak didukung; sertakan header Allow.</td></tr><tr><td>409</td><td>Email register atau NIS/kode edit berbenturan dengan fixture.</td></tr><tr><td>415</td><td>Request yang memerlukan JSON menggunakan Content-Type selain application/json.</td></tr><tr><td>422</td><td>JSON valid tetapi bentuk/field/nilainya tidak sesuai aturan.</td></tr><tr><td>413</td><td>Body melebihi batas 100 KB.</td></tr><tr><td>503</td><td>JWT_SECRET belum ada atau kurang dari 32 karakter; endpoint publik tetap bisa diakses.</td></tr><tr><td>500</td><td>Kesalahan server; tidak menampilkan stack trace atau secret.</td></tr></tbody></table></div><p>Semua error menggunakan <code>{ success: false, message, errors }</code>. <code>errors</code> berisi objek per field untuk validasi/query; gunakan <code>{}</code> bila tidak terkait field. Body JSON harus berupa objek, bukan array atau nilai primitif. Body dibatasi 100 KB. Nilai ID path/query harus angka desimal positif tanpa nol di depan. Query tidak diterima pada auth, health, detail, PATCH, atau DELETE. HEAD tidak didukung (405); OPTIONS ditangani untuk CORS. Kode 405 berlaku umum; 415 berlaku pada POST/PATCH. OPTIONS untuk CORS ditangani otomatis.</p></section><section id="examples"><span class="eyebrow">KONTRAK V1</span><h2>Contoh untuk frontend.</h2><p>Untuk mencoba lokal, gunakan base URL http://localhost:3000/api/v1. Untuk Netlify, ganti dengan domain deployment milikmu.</p><h3>1. Ambil daftar siswa</h3><pre><code>const BASE_URL = &#x27;http://localhost:3000/api/v1&#x27;;
+
+const response = await fetch(`${BASE_URL}/students?page=1&amp;limit=10`);
+const result = await response.json();
+if (!response.ok) throw new Error(result.message);
+console.log(result.data); // Array siswa
+console.log(result.meta); // Informasi pagination</code></pre><h3>2. Login dan ambil profil</h3><pre><code>const loginResponse = await fetch(`${BASE_URL}/auth/login`, {
+  method: &#x27;POST&#x27;,
+  headers: { &#x27;Content-Type&#x27;: &#x27;application/json&#x27; },
+  body: JSON.stringify({
+    email: &#x27;admin@sekolahlab.com&#x27;,
+    password: &#x27;Belajar123!&#x27;
+  })
+});
+const login = await loginResponse.json();
+if (!loginResponse.ok) throw new Error(login.message);
+const token = login.data.access_token;
+
+const profileResponse = await fetch(`${BASE_URL}/auth/me`, {
+  headers: { Authorization: `Bearer ${token}` }
+});
+const profile = await profileResponse.json();
+if (!profileResponse.ok) throw new Error(profile.message);
+console.log(profile.data);</code></pre><h3>3. Simulasi edit siswa</h3><pre><code>const editResponse = await fetch(`${BASE_URL}/students/1`, {
+  method: &#x27;PATCH&#x27;,
+  headers: {
+    &#x27;Content-Type&#x27;: &#x27;application/json&#x27;,
+    Authorization: `Bearer ${token}`
+  },
+  body: JSON.stringify({ name: &#x27;Alya Putri Utami&#x27; })
+});
+const edited = await editResponse.json();
+if (!editResponse.ok) throw new Error(edited.message);
+console.log(edited.data); // Hasil simulasi
+// GET /students/1 berikutnya tetap mengembalikan data awal.</code></pre></section><section id="scope"><span class="eyebrow">KONTRAK V1</span><h2>Batas versi pertama.</h2><div class="table-wrap"><table><thead><tr><th>Tahap</th><th>Cakupan</th></tr></thead><tbody><tr><td>Selesai · Endpoint baca</td><td>Data contoh, auth, GET siswa/guru/pelajaran/berita, GET kelas/jurusan, health, dokumentasi HTML.</td></tr><tr><td>Selesai · Simulasi perubahan</td><td>PATCH/DELETE simulasi pada empat resource utama; validasi, error, CORS, dan pengujian lokal. Deployment online masih perlu dilakukan.</td></tr><tr><td>Berikutnya</td><td>Jadwal pembelajaran: class_id, subject_id, teacher_id, day, start_time, end_time. Belum ada endpoint dalam 24 mapping ini.</td></tr><tr><td>Di luar cakupan</td><td>Database, akun register permanen, upload foto, refresh token, reset password, CRUD kelas/jurusan, dan dashboard admin.</td></tr></tbody></table></div><p>Fixture tersedia: 30 siswa, 10 guru, 10 pelajaran, 13 kelas, 10 jurusan, 10 berita, 10 akun demo. Mayoritas siswa/guru boleh memiliki <code>user_id: null</code>; akun demo siswa/guru masing-masing mengacu satu profil. Seluruh identitas bersifat fiktif.</p><p>Implementasi memakai Express yang dibungkus menjadi Netlify Function. File JSON ikut bundle function; file dokumentasi menjadi halaman statis. Secret token disetel di Netlify dan tidak dimasukkan ke GitHub. Repo belum dihubungkan ke Netlify dan deployment online belum diuji.</p><div class="notice"><strong>Perilaku simulasi</strong><p>Nama field dan endpoint • GET publik • admin untuk edit/hapus • register simulasi tanpa login akun baru • jadwal di tahap berikutnya.</p></div></section><section id="sources"><span class="eyebrow">KONTRAK V1</span><h2>Referensi dan sumber gambar.</h2><ul><li><a href="https://docs.netlify.com/build/frameworks/framework-setup-guides/express/">Panduan resmi Express di Netlify</a></li><li><a href="https://docs.netlify.com/build/functions/configuration/">Konfigurasi dan penyertaan file Functions</a></li><li><a href="https://www.dicebear.com/how-to-use/http-api">DiceBear HTTP API</a> — layanan publik gratis untuk penggunaan nonkomersial.</li><li><a href="https://www.dicebear.com/styles/avataaars/">Gaya Avataaars dan lisensi ilustrasi</a></li><li>Foto ilustrasi Unsplash: <a href="https://unsplash.com/photos/books-are-open-on-a-wooden-table-79IBSeVqN88">buku terbuka — Taylor Burnfield</a>, <a href="https://unsplash.com/photos/a-stack-of-books-FDuxrHs9zpE">tumpukan buku — Eman Ali</a>, <a href="https://unsplash.com/photos/empty-basketball-court-YO1A16JteXg">lapangan basket — travis jones</a>, dan <a href="https://unsplash.com/photos/flat-screen-monitor-turned-on-CosHjyONRk8">komputer — Fernando Hernandez</a>. <a href="https://unsplash.com/license">Lisensi Unsplash</a>.</li></ul><p class="muted">Versi 1 · 17 September 2026. Implementasi dan pengujian lokal tersedia; deployment online belum dilakukan.</p></section><footer>SekolahLab API · Dokumentasi v1 · 2026</footer></main><script>const items=[...document.querySelectorAll('.endpoint')];
+const search=document.querySelector('#search'),phase=document.querySelector('#phase'),method=document.querySelector('#method');
+function filter(){let count=0;const q=search.value.trim().toLowerCase();items.forEach(el=>{const shown=(el.dataset.search.toLowerCase().includes(q)||('/api/v1'+el.dataset.search).includes(q))&&(!phase.value||el.dataset.phase===phase.value)&&(!method.value||el.dataset.method===method.value);el.hidden=!shown;if(shown)count++});document.querySelector('#result-count').textContent=count+' dari '+items.length+' endpoint';document.querySelector('#empty').hidden=count!==0}
+[search,phase,method].forEach(el=>el.addEventListener('input',filter));
+let beforePrint=[];window.addEventListener('beforeprint',()=>{beforePrint=items.map(el=>({open:el.open,hidden:el.hidden}));items.forEach(el=>{el.open=true;el.hidden=false})});window.addEventListener('afterprint',()=>items.forEach((el,i)=>{el.open=beforePrint[i].open;el.hidden=beforePrint[i].hidden}));document.querySelector('#print').addEventListener('click',()=>window.print());</script></body></html>

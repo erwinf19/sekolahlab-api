@@ -1,0 +1,302 @@
+[
+  {
+    "id": 1,
+    "user_id": 3,
+    "nis": "20260001",
+    "name": "Alya Putri",
+    "gender": "female",
+    "birth_date": "2010-05-12",
+    "class_id": 1,
+    "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-001"
+  },
+  {
+    "id": 2,
+    "user_id": 7,
+    "nis": "20260002",
+    "name": "Arif Ramadhan",
+    "gender": "male",
+    "birth_date": "2010-02-02",
+    "class_id": 2,
+    "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-002"
+  },
+  {
+    "id": 3,
+    "user_id": 8,
+    "nis": "20260003",
+    "name": "Citra Lestari",
+    "gender": "female",
+    "birth_date": "2010-03-03",
+    "class_id": 3,
+    "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-003"
+  },
+  {
+    "id": 4,
+    "user_id": 9,
+    "nis": "20260004",
+    "name": "Danu Wijaya",
+    "gender": "male",
+    "birth_date": "2009-04-04",
+    "class_id": 4,
+    "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-004"
+  },
+  {
+    "id": 5,
+    "user_id": 10,
+    "nis": "20260005",
+    "name": "Eka Permata",
+    "gender": "female",
+    "birth_date": "2009-05-05",
+    "class_id": 5,
+    "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-005"
+  },
+  {
+    "id": 6,
+    "user_id": null,
+    "nis": "20260006",
+    "name": "Fajar Nugraha",
+    "gender": "male",
+    "birth_date": "2009-06-06",
+    "class_id": 6,
+    "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-006"
+  },
+  {
+    "id": 7,
+    "user_id": null,
+    "nis": "20260007",
+    "name": "Gita Maharani",
+    "gender": "female",
+    "birth_date": "2010-07-07",
+    "class_id": 1,
+    "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-007"
+  },
+  {
+    "id": 8,
+    "user_id": null,
+    "nis": "20260008",
+    "name": "Hadi Kurniawan",
+    "gender": "male",
+    "birth_date": "2010-08-08",
+    "class_id": 2,
+    "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-008"
+  },
+  {
+    "id": 9,
+    "user_id": null,
+    "nis": "20260009",
+    "name": "Intan Safitri",
+    "gender": "female",
+    "birth_date": "2010-09-09",
+    "class_id": 3,
+    "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-009"
+  },
+  {
+    "id": 10,
+    "user_id": null,
+    "nis": "20260010",
+    "name": "Joko Prasetyo",
+    "gender": "male",
+    "birth_date": "2009-10-10",
+    "class_id": 4,
+    "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-010"
+  },
+  {
+    "id": 11,
+    "user_id": null,
+    "nis": "20260011",
+    "name": "Kirana Dewi",
+    "gender": "female",
+    "birth_date": "2009-11-11",
+    "class_id": 5,
+    "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-011"
+  },
+  {
+    "id": 12,
+    "user_id": null,
+    "nis": "20260012",
+    "name": "Lukman Hakim",
+    "gender": "male",
+    "birth_date": "2009-12-12",
+    "class_id": 6,
+    "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-012"
+  },
+  {
+    "id": 13,
+    "user_id": null,
+    "nis": "20260013",
+    "name": "Maya Salsabila",
+    "gender": "female",
+    "birth_date": "2010-01-13",
+    "class_id": 1,
+    "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-013"
+  },
+  {
+    "id": 14,
+    "user_id": null,
+    "nis": "20260014",
+    "name": "Naufal Akbar",
+    "gender": "male",
+    "birth_date": "2010-02-14",
+    "class_id": 2,
+    "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-014"
+  },
+  {
+    "id": 15,
+    "user_id": null,
+    "nis": "20260015",
+    "name": "Oktavia Rani",
+    "gender": "female",
+    "birth_date": "2010-03-15",
+    "class_id": 3,
+    "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-015"
+  },
+  {
+    "id": 16,
+    "user_id": null,
+    "nis": "20260016",
+    "name": "Putra Aditya",
+    "gender": "male",
+    "birth_date": "2009-04-16",
+    "class_id": 4,
+    "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-016"
+  },
+  {
+    "id": 17,
+    "user_id": null,
+    "nis": "20260017",
+    "name": "Qonita Zahra",
+    "gender": "female",
+    "birth_date": "2009-05-17",
+    "class_id": 7,
+    "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-017"
+  },
+  {
+    "id": 18,
+    "user_id": null,
+    "nis": "20260018",
+    "name": "Raka Wibowo",
+    "gender": "male",
+    "birth_date": "2009-06-18",
+    "class_id": 8,
+    "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-018"
+  },
+  {
+    "id": 19,
+    "user_id": null,
+    "nis": "20260019",
+    "name": "Salma Azzahra",
+    "gender": "female",
+    "birth_date": "2010-07-19",
+    "class_id": 9,
+    "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-019"
+  },
+  {
+    "id": 20,
+    "user_id": null,
+    "nis": "20260020",
+    "name": "Tegar Firmansyah",
+    "gender": "male",
+    "birth_date": "2010-08-20",
+    "class_id": 10,
+    "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-020"
+  },
+  {
+    "id": 21,
+    "user_id": null,
+    "nis": "20260021",
+    "name": "Utami Laras",
+    "gender": "female",
+    "birth_date": "2010-09-21",
+    "class_id": 11,
+    "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-021"
+  },
+  {
+    "id": 22,
+    "user_id": null,
+    "nis": "20260022",
+    "name": "Vino Mahendra",
+    "gender": "male",
+    "birth_date": "2009-10-22",
+    "class_id": 12,
+    "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-022"
+  },
+  {
+    "id": 23,
+    "user_id": null,
+    "nis": "20260023",
+    "name": "Wulan Sari",
+    "gender": "female",
+    "birth_date": "2009-11-23",
+    "class_id": 13,
+    "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-023"
+  },
+  {
+    "id": 24,
+    "user_id": null,
+    "nis": "20260024",
+    "name": "Yudha Setiawan",
+    "gender": "male",
+    "birth_date": "2009-12-24",
+    "class_id": 7,
+    "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-024"
+  },
+  {
+    "id": 25,
+    "user_id": null,
+    "nis": "20260025",
+    "name": "Zahra Amelia",
+    "gender": "female",
+    "birth_date": "2010-01-25",
+    "class_id": 8,
+    "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-025"
+  },
+  {
+    "id": 26,
+    "user_id": null,
+    "nis": "20260026",
+    "name": "Bagas Saputra",
+    "gender": "male",
+    "birth_date": "2010-02-26",
+    "class_id": 9,
+    "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-026"
+  },
+  {
+    "id": 27,
+    "user_id": null,
+    "nis": "20260027",
+    "name": "Dinda Aprilia",
+    "gender": "female",
+    "birth_date": "2010-03-27",
+    "class_id": 10,
+    "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-027"
+  },
+  {
+    "id": 28,
+    "user_id": null,
+    "nis": "20260028",
+    "name": "Farhan Maulana",
+    "gender": "male",
+    "birth_date": "2009-04-01",
+    "class_id": 11,
+    "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-028"
+  },
+  {
+    "id": 29,
+    "user_id": null,
+    "nis": "20260029",
+    "name": "Nadia Ramadhani",
+    "gender": "female",
+    "birth_date": "2009-05-02",
+    "class_id": 12,
+    "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-029"
+  },
+  {
+    "id": 30,
+    "user_id": null,
+    "nis": "20260030",
+    "name": "Rizky Pratama",
+    "gender": "male",
+    "birth_date": "2009-06-03",
+    "class_id": 13,
+    "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-030"
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "code": "MTK",
+    "name": "Matematika",
+    "description": "Materi latihan matematika untuk siswa sekolah."
+  },
+  {
+    "id": 2,
+    "code": "BIN",
+    "name": "Bahasa Indonesia",
+    "description": "Materi latihan bahasa indonesia untuk siswa sekolah."
+  },
+  {
+    "id": 3,
+    "code": "BIG",
+    "name": "Bahasa Inggris",
+    "description": "Materi latihan bahasa inggris untuk siswa sekolah."
+  },
+  {
+    "id": 4,
+    "code": "PPL",
+    "name": "Pemrograman Dasar",
+    "description": "Materi latihan pemrograman dasar untuk siswa sekolah."
+  },
+  {
+    "id": 5,
+    "code": "BAS",
+    "name": "Basis Data",
+    "description": "Materi latihan basis data untuk siswa sekolah."
+  },
+  {
+    "id": 6,
+    "code": "JAR",
+    "name": "Jaringan Komputer",
+    "description": "Materi latihan jaringan komputer untuk siswa sekolah."
+  },
+  {
+    "id": 7,
+    "code": "DKV",
+    "name": "Desain Komunikasi Visual",
+    "description": "Materi latihan desain komunikasi visual untuk siswa sekolah."
+  },
+  {
+    "id": 8,
+    "code": "PJOK",
+    "name": "Pendidikan Jasmani",
+    "description": "Materi latihan pendidikan jasmani untuk siswa sekolah."
+  },
+  {
+    "id": 9,
+    "code": "PKN",
+    "name": "Pendidikan Pancasila",
+    "description": "Hak, kewajiban, musyawarah, dan tanggung jawab sebagai warga negara."
+  },
+  {
+    "id": 10,
+    "code": "PKK",
+    "name": "Produk Kreatif dan Kewirausahaan",
+    "description": "Perencanaan usaha sederhana, pengembangan produk, dan promosi digital."
+  }
+]

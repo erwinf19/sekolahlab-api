@@ -1,0 +1,106 @@
+[
+  {
+    "id": 1,
+    "name": "X RPL 1",
+    "grade": 10,
+    "major_id": 1,
+    "homeroom_teacher_id": 1,
+    "academic_year": "2026/2027"
+  },
+  {
+    "id": 2,
+    "name": "X TKJ 1",
+    "grade": 10,
+    "major_id": 2,
+    "homeroom_teacher_id": 2,
+    "academic_year": "2026/2027"
+  },
+  {
+    "id": 3,
+    "name": "X DKV 1",
+    "grade": 10,
+    "major_id": 3,
+    "homeroom_teacher_id": 3,
+    "academic_year": "2026/2027"
+  },
+  {
+    "id": 4,
+    "name": "XI RPL 1",
+    "grade": 11,
+    "major_id": 1,
+    "homeroom_teacher_id": 4,
+    "academic_year": "2026/2027"
+  },
+  {
+    "id": 5,
+    "name": "XI TKJ 1",
+    "grade": 11,
+    "major_id": 2,
+    "homeroom_teacher_id": 5,
+    "academic_year": "2026/2027"
+  },
+  {
+    "id": 6,
+    "name": "XI DKV 1",
+    "grade": 11,
+    "major_id": 3,
+    "homeroom_teacher_id": 6,
+    "academic_year": "2026/2027"
+  },
+  {
+    "id": 7,
+    "name": "X AKL 1",
+    "grade": 10,
+    "major_id": 4,
+    "homeroom_teacher_id": 7,
+    "academic_year": "2026/2027"
+  },
+  {
+    "id": 8,
+    "name": "X MPLB 1",
+    "grade": 10,
+    "major_id": 5,
+    "homeroom_teacher_id": 8,
+    "academic_year": "2026/2027"
+  },
+  {
+    "id": 9,
+    "name": "X PM 1",
+    "grade": 10,
+    "major_id": 6,
+    "homeroom_teacher_id": 9,
+    "academic_year": "2026/2027"
+  },
+  {
+    "id": 10,
+    "name": "X TKR 1",
+    "grade": 10,
+    "major_id": 7,
+    "homeroom_teacher_id": 10,
+    "academic_year": "2026/2027"
+  },
+  {
+    "id": 11,
+    "name": "X TSM 1",
+    "grade": 10,
+    "major_id": 8,
+    "homeroom_teacher_id": 1,
+    "academic_year": "2026/2027"
+  },
+  {
+    "id": 12,
+    "name": "X KUL 1",
+    "grade": 10,
+    "major_id": 9,
+    "homeroom_teacher_id": 2,
+    "academic_year": "2026/2027"
+  },
+  {
+    "id": 13,
+    "name": "X PH 1",
+    "grade": 10,
+    "major_id": 10,
+    "homeroom_teacher_id": 3,
+    "academic_year": "2026/2027"
+  }
+]

@@ -1,0 +1,113 @@
+[
+  {
+    "id": 1,
+    "user_id": 2,
+    "teacher_code": "GR001",
+    "name": "Budi Santoso",
+    "gender": "male",
+    "subject_ids": [
+      1,
+      2
+    ],
+    "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-teacher-001"
+  },
+  {
+    "id": 2,
+    "user_id": 4,
+    "teacher_code": "GR002",
+    "name": "Ratna Wulandari",
+    "gender": "female",
+    "subject_ids": [
+      2
+    ],
+    "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-teacher-002"
+  },
+  {
+    "id": 3,
+    "user_id": 5,
+    "teacher_code": "GR003",
+    "name": "Dewi Anggraini",
+    "gender": "female",
+    "subject_ids": [
+      3
+    ],
+    "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-teacher-003"
+  },
+  {
+    "id": 4,
+    "user_id": 6,
+    "teacher_code": "GR004",
+    "name": "Agus Pratama",
+    "gender": "male",
+    "subject_ids": [
+      4
+    ],
+    "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-teacher-004"
+  },
+  {
+    "id": 5,
+    "user_id": null,
+    "teacher_code": "GR005",
+    "name": "Siti Rahmawati",
+    "gender": "female",
+    "subject_ids": [
+      5
+    ],
+    "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-teacher-005"
+  },
+  {
+    "id": 6,
+    "user_id": null,
+    "teacher_code": "GR006",
+    "name": "Rudi Hartono",
+    "gender": "male",
+    "subject_ids": [
+      6
+    ],
+    "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-teacher-006"
+  },
+  {
+    "id": 7,
+    "user_id": null,
+    "teacher_code": "GR007",
+    "name": "Nina Kartika",
+    "gender": "female",
+    "subject_ids": [
+      7
+    ],
+    "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-teacher-007"
+  },
+  {
+    "id": 8,
+    "user_id": null,
+    "teacher_code": "GR008",
+    "name": "Dimas Saputra",
+    "gender": "male",
+    "subject_ids": [
+      8
+    ],
+    "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-teacher-008"
+  },
+  {
+    "id": 9,
+    "user_id": null,
+    "teacher_code": "GR009",
+    "name": "Laras Puspita",
+    "gender": "female",
+    "subject_ids": [
+      9
+    ],
+    "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-teacher-009"
+  },
+  {
+    "id": 10,
+    "user_id": null,
+    "teacher_code": "GR010",
+    "name": "Andi Setiawan",
+    "gender": "male",
+    "subject_ids": [
+      10
+    ],
+    "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-teacher-010"
+  }
+]

@@ -1,0 +1,1152 @@
+{
+  "title": "SekolahLab API",
+  "status": "implemented-local",
+  "version": "1.0",
+  "base_path": "/api/v1",
+  "endpoints": [
+    {
+      "method": "POST",
+      "path": "/auth/login",
+      "group": "Auth",
+      "title": "Login dengan akun demo",
+      "access": "Publik",
+      "phase": "Utama",
+      "desc": "Cocokkan email dan password dengan akun demo. Token ditandatangani backend; secret disimpan sebagai environment variable. Masa berlaku: 1 jam. Password tidak pernah dikembalikan. Jika JWT_SECRET belum dikonfigurasi, endpoint mengembalikan 503.",
+      "request": {
+        "email": "admin@sekolahlab.com",
+        "password": "Belajar123!"
+      },
+      "response": {
+        "success": true,
+        "message": "Login berhasil.",
+        "data": {
+          "user": {
+            "id": 1,
+            "name": "Admin SekolahLab",
+            "email": "admin@sekolahlab.com",
+            "role": "admin",
+            "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-admin-001"
+          },
+          "access_token": "<token-demo-dari-backend>",
+          "token_type": "Bearer",
+          "expires_in": 3600
+        }
+      },
+      "status": 200,
+      "errors": "400, 401, 422, 500, 503, 413, 415"
+    },
+    {
+      "method": "POST",
+      "path": "/auth/register",
+      "group": "Auth",
+      "title": "Simulasi registrasi",
+      "access": "Publik",
+      "phase": "Utama",
+      "desc": "Validasi nama, email, password dan konfirmasi. Role selalu student; klien tidak boleh mengirim role. Email dibandingkan hanya dengan akun fixture. Akun baru tidak disimpan, tidak mendapatkan token, dan tidak bisa login berikutnya.",
+      "request": {
+        "name": "Dina Lestari",
+        "email": "dina@example.com",
+        "password": "Belajar123!",
+        "password_confirmation": "Belajar123!"
+      },
+      "response": {
+        "success": true,
+        "message": "Simulasi registrasi berhasil. Akun tidak disimpan.",
+        "data": {
+          "id": null,
+          "name": "Dina Lestari",
+          "email": "dina@example.com",
+          "role": "student"
+        },
+        "meta": {
+          "simulation": true,
+          "persisted": false
+        }
+      },
+      "status": 201,
+      "errors": "400, 409, 422, 500, 413, 415"
+    },
+    {
+      "method": "GET",
+      "path": "/auth/me",
+      "group": "Auth",
+      "title": "Profil pengguna login",
+      "access": "Token",
+      "phase": "Utama",
+      "desc": "Verifikasi token, masa berlaku, dan ID akun demo, lalu kembalikan profil aman. Token hilang/tidak valid/kedaluwarsa menghasilkan 401.",
+      "request": null,
+      "response": {
+        "success": true,
+        "message": "Data berhasil diambil.",
+        "data": {
+          "id": 1,
+          "name": "Admin SekolahLab",
+          "email": "admin@sekolahlab.com",
+          "role": "admin",
+          "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-admin-001"
+        }
+      },
+      "status": 200,
+      "errors": "401, 500, 503"
+    },
+    {
+      "method": "GET",
+      "path": "/students",
+      "group": "Siswa",
+      "title": "Daftar siswa",
+      "access": "Publik",
+      "phase": "Utama",
+      "desc": "Cari pada name, nis. Filter: class_id (integer positif), gender (male/female). Sorting diizinkan: id, name, nis. Contoh respons memakai data fixture. Maksimal 10 item ditampilkan pada halaman pertama dengan pengaturan default.",
+      "request": null,
+      "response": {
+        "success": true,
+        "message": "Data berhasil diambil.",
+        "data": [
+          {
+            "id": 1,
+            "user_id": 3,
+            "nis": "20260001",
+            "name": "Alya Putri",
+            "gender": "female",
+            "birth_date": "2010-05-12",
+            "class_id": 1,
+            "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-001"
+          },
+          {
+            "id": 2,
+            "user_id": 7,
+            "nis": "20260002",
+            "name": "Arif Ramadhan",
+            "gender": "male",
+            "birth_date": "2010-02-02",
+            "class_id": 2,
+            "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-002"
+          },
+          {
+            "id": 3,
+            "user_id": 8,
+            "nis": "20260003",
+            "name": "Citra Lestari",
+            "gender": "female",
+            "birth_date": "2010-03-03",
+            "class_id": 3,
+            "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-003"
+          },
+          {
+            "id": 4,
+            "user_id": 9,
+            "nis": "20260004",
+            "name": "Danu Wijaya",
+            "gender": "male",
+            "birth_date": "2009-04-04",
+            "class_id": 4,
+            "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-004"
+          },
+          {
+            "id": 5,
+            "user_id": 10,
+            "nis": "20260005",
+            "name": "Eka Permata",
+            "gender": "female",
+            "birth_date": "2009-05-05",
+            "class_id": 5,
+            "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-005"
+          },
+          {
+            "id": 6,
+            "user_id": null,
+            "nis": "20260006",
+            "name": "Fajar Nugraha",
+            "gender": "male",
+            "birth_date": "2009-06-06",
+            "class_id": 6,
+            "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-006"
+          },
+          {
+            "id": 7,
+            "user_id": null,
+            "nis": "20260007",
+            "name": "Gita Maharani",
+            "gender": "female",
+            "birth_date": "2010-07-07",
+            "class_id": 1,
+            "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-007"
+          },
+          {
+            "id": 8,
+            "user_id": null,
+            "nis": "20260008",
+            "name": "Hadi Kurniawan",
+            "gender": "male",
+            "birth_date": "2010-08-08",
+            "class_id": 2,
+            "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-008"
+          },
+          {
+            "id": 9,
+            "user_id": null,
+            "nis": "20260009",
+            "name": "Intan Safitri",
+            "gender": "female",
+            "birth_date": "2010-09-09",
+            "class_id": 3,
+            "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-009"
+          },
+          {
+            "id": 10,
+            "user_id": null,
+            "nis": "20260010",
+            "name": "Joko Prasetyo",
+            "gender": "male",
+            "birth_date": "2009-10-10",
+            "class_id": 4,
+            "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-010"
+          }
+        ],
+        "meta": {
+          "page": 1,
+          "limit": 10,
+          "total": 30,
+          "total_pages": 3
+        }
+      },
+      "status": 200,
+      "errors": "400, 500"
+    },
+    {
+      "method": "GET",
+      "path": "/students/:id",
+      "group": "Siswa",
+      "title": "Detail siswa",
+      "access": "Publik",
+      "phase": "Utama",
+      "desc": "ID integer positif. Respons menggunakan ID relasi; ambil nama relasi dari endpoint terkait. Data tidak ditemukan menghasilkan 404.",
+      "request": null,
+      "response": {
+        "success": true,
+        "message": "Data berhasil diambil.",
+        "data": {
+          "id": 1,
+          "user_id": 3,
+          "nis": "20260001",
+          "name": "Alya Putri",
+          "gender": "female",
+          "birth_date": "2010-05-12",
+          "class_id": 1,
+          "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-001"
+        }
+      },
+      "status": 200,
+      "errors": "400, 404, 500"
+    },
+    {
+      "method": "PATCH",
+      "path": "/students/:id",
+      "group": "Siswa",
+      "title": "Simulasi edit siswa",
+      "access": "Admin",
+      "phase": "Lanjutan",
+      "desc": "Ubah sebagian field yang diizinkan. Validasi berdasarkan fixture awal. Response menampilkan hasil penggabungan; GET berikutnya tetap membaca data awal. Tidak menyimpan perubahan.",
+      "request": {
+        "name": "Alya Putri Utami",
+        "class_id": 2
+      },
+      "response": {
+        "success": true,
+        "message": "Simulasi perubahan berhasil. Data tidak disimpan.",
+        "data": {
+          "id": 1,
+          "user_id": 3,
+          "nis": "20260001",
+          "name": "Alya Putri Utami",
+          "gender": "female",
+          "birth_date": "2010-05-12",
+          "class_id": 2,
+          "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-001"
+        },
+        "meta": {
+          "simulation": true,
+          "persisted": false
+        }
+      },
+      "status": 200,
+      "errors": "400, 401, 403, 404, 409, 422, 500, 503, 413, 415"
+    },
+    {
+      "method": "DELETE",
+      "path": "/students/:id",
+      "group": "Siswa",
+      "title": "Simulasi hapus siswa",
+      "access": "Admin",
+      "phase": "Lanjutan",
+      "desc": "Periksa ID pada fixture, lalu kembalikan konfirmasi. Tidak menghapus data atau menjalankan cascade; relasi tetap sama. Dipanggil lagi pada ID yang sama tetap sukses selama ID ada pada fixture.",
+      "request": null,
+      "response": {
+        "success": true,
+        "message": "Simulasi penghapusan berhasil. Data awal tetap tersedia.",
+        "data": {
+          "id": 1
+        },
+        "meta": {
+          "simulation": true,
+          "persisted": false
+        }
+      },
+      "status": 200,
+      "errors": "400, 401, 403, 404, 500, 503"
+    },
+    {
+      "method": "GET",
+      "path": "/teachers",
+      "group": "Guru",
+      "title": "Daftar guru",
+      "access": "Publik",
+      "phase": "Utama",
+      "desc": "Cari pada name, teacher_code. Filter: subject_id (integer positif), gender (male/female). Sorting diizinkan: id, name, teacher_code. Contoh respons memakai data fixture. Maksimal 10 item ditampilkan pada halaman pertama dengan pengaturan default.",
+      "request": null,
+      "response": {
+        "success": true,
+        "message": "Data berhasil diambil.",
+        "data": [
+          {
+            "id": 1,
+            "user_id": 2,
+            "teacher_code": "GR001",
+            "name": "Budi Santoso",
+            "gender": "male",
+            "subject_ids": [
+              1,
+              2
+            ],
+            "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-teacher-001"
+          },
+          {
+            "id": 2,
+            "user_id": 4,
+            "teacher_code": "GR002",
+            "name": "Ratna Wulandari",
+            "gender": "female",
+            "subject_ids": [
+              2
+            ],
+            "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-teacher-002"
+          },
+          {
+            "id": 3,
+            "user_id": 5,
+            "teacher_code": "GR003",
+            "name": "Dewi Anggraini",
+            "gender": "female",
+            "subject_ids": [
+              3
+            ],
+            "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-teacher-003"
+          },
+          {
+            "id": 4,
+            "user_id": 6,
+            "teacher_code": "GR004",
+            "name": "Agus Pratama",
+            "gender": "male",
+            "subject_ids": [
+              4
+            ],
+            "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-teacher-004"
+          },
+          {
+            "id": 5,
+            "user_id": null,
+            "teacher_code": "GR005",
+            "name": "Siti Rahmawati",
+            "gender": "female",
+            "subject_ids": [
+              5
+            ],
+            "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-teacher-005"
+          },
+          {
+            "id": 6,
+            "user_id": null,
+            "teacher_code": "GR006",
+            "name": "Rudi Hartono",
+            "gender": "male",
+            "subject_ids": [
+              6
+            ],
+            "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-teacher-006"
+          },
+          {
+            "id": 7,
+            "user_id": null,
+            "teacher_code": "GR007",
+            "name": "Nina Kartika",
+            "gender": "female",
+            "subject_ids": [
+              7
+            ],
+            "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-teacher-007"
+          },
+          {
+            "id": 8,
+            "user_id": null,
+            "teacher_code": "GR008",
+            "name": "Dimas Saputra",
+            "gender": "male",
+            "subject_ids": [
+              8
+            ],
+            "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-teacher-008"
+          },
+          {
+            "id": 9,
+            "user_id": null,
+            "teacher_code": "GR009",
+            "name": "Laras Puspita",
+            "gender": "female",
+            "subject_ids": [
+              9
+            ],
+            "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-teacher-009"
+          },
+          {
+            "id": 10,
+            "user_id": null,
+            "teacher_code": "GR010",
+            "name": "Andi Setiawan",
+            "gender": "male",
+            "subject_ids": [
+              10
+            ],
+            "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-teacher-010"
+          }
+        ],
+        "meta": {
+          "page": 1,
+          "limit": 10,
+          "total": 10,
+          "total_pages": 1
+        }
+      },
+      "status": 200,
+      "errors": "400, 500"
+    },
+    {
+      "method": "GET",
+      "path": "/teachers/:id",
+      "group": "Guru",
+      "title": "Detail guru",
+      "access": "Publik",
+      "phase": "Utama",
+      "desc": "ID integer positif. Respons menggunakan ID relasi; ambil nama relasi dari endpoint terkait. Data tidak ditemukan menghasilkan 404.",
+      "request": null,
+      "response": {
+        "success": true,
+        "message": "Data berhasil diambil.",
+        "data": {
+          "id": 1,
+          "user_id": 2,
+          "teacher_code": "GR001",
+          "name": "Budi Santoso",
+          "gender": "male",
+          "subject_ids": [
+            1,
+            2
+          ],
+          "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-teacher-001"
+        }
+      },
+      "status": 200,
+      "errors": "400, 404, 500"
+    },
+    {
+      "method": "PATCH",
+      "path": "/teachers/:id",
+      "group": "Guru",
+      "title": "Simulasi edit guru",
+      "access": "Admin",
+      "phase": "Lanjutan",
+      "desc": "Ubah sebagian field yang diizinkan. Validasi berdasarkan fixture awal. Response menampilkan hasil penggabungan; GET berikutnya tetap membaca data awal. Tidak menyimpan perubahan.",
+      "request": {
+        "name": "Budi Santoso",
+        "subject_ids": [
+          1
+        ]
+      },
+      "response": {
+        "success": true,
+        "message": "Simulasi perubahan berhasil. Data tidak disimpan.",
+        "data": {
+          "id": 1,
+          "user_id": 2,
+          "teacher_code": "GR001",
+          "name": "Budi Santoso",
+          "gender": "male",
+          "subject_ids": [
+            1
+          ],
+          "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-teacher-001"
+        },
+        "meta": {
+          "simulation": true,
+          "persisted": false
+        }
+      },
+      "status": 200,
+      "errors": "400, 401, 403, 404, 409, 422, 500, 503, 413, 415"
+    },
+    {
+      "method": "DELETE",
+      "path": "/teachers/:id",
+      "group": "Guru",
+      "title": "Simulasi hapus guru",
+      "access": "Admin",
+      "phase": "Lanjutan",
+      "desc": "Periksa ID pada fixture, lalu kembalikan konfirmasi. Tidak menghapus data atau menjalankan cascade; relasi tetap sama. Dipanggil lagi pada ID yang sama tetap sukses selama ID ada pada fixture.",
+      "request": null,
+      "response": {
+        "success": true,
+        "message": "Simulasi penghapusan berhasil. Data awal tetap tersedia.",
+        "data": {
+          "id": 1
+        },
+        "meta": {
+          "simulation": true,
+          "persisted": false
+        }
+      },
+      "status": 200,
+      "errors": "400, 401, 403, 404, 500, 503"
+    },
+    {
+      "method": "GET",
+      "path": "/subjects",
+      "group": "Pelajaran",
+      "title": "Daftar pelajaran",
+      "access": "Publik",
+      "phase": "Utama",
+      "desc": "Cari pada name, code. Filter: —. Sorting diizinkan: id, name, code. Contoh respons memakai data fixture. Maksimal 10 item ditampilkan pada halaman pertama dengan pengaturan default.",
+      "request": null,
+      "response": {
+        "success": true,
+        "message": "Data berhasil diambil.",
+        "data": [
+          {
+            "id": 1,
+            "code": "MTK",
+            "name": "Matematika",
+            "description": "Materi latihan matematika untuk siswa sekolah."
+          },
+          {
+            "id": 2,
+            "code": "BIN",
+            "name": "Bahasa Indonesia",
+            "description": "Materi latihan bahasa indonesia untuk siswa sekolah."
+          },
+          {
+            "id": 3,
+            "code": "BIG",
+            "name": "Bahasa Inggris",
+            "description": "Materi latihan bahasa inggris untuk siswa sekolah."
+          },
+          {
+            "id": 4,
+            "code": "PPL",
+            "name": "Pemrograman Dasar",
+            "description": "Materi latihan pemrograman dasar untuk siswa sekolah."
+          },
+          {
+            "id": 5,
+            "code": "BAS",
+            "name": "Basis Data",
+            "description": "Materi latihan basis data untuk siswa sekolah."
+          },
+          {
+            "id": 6,
+            "code": "JAR",
+            "name": "Jaringan Komputer",
+            "description": "Materi latihan jaringan komputer untuk siswa sekolah."
+          },
+          {
+            "id": 7,
+            "code": "DKV",
+            "name": "Desain Komunikasi Visual",
+            "description": "Materi latihan desain komunikasi visual untuk siswa sekolah."
+          },
+          {
+            "id": 8,
+            "code": "PJOK",
+            "name": "Pendidikan Jasmani",
+            "description": "Materi latihan pendidikan jasmani untuk siswa sekolah."
+          },
+          {
+            "id": 9,
+            "code": "PKN",
+            "name": "Pendidikan Pancasila",
+            "description": "Hak, kewajiban, musyawarah, dan tanggung jawab sebagai warga negara."
+          },
+          {
+            "id": 10,
+            "code": "PKK",
+            "name": "Produk Kreatif dan Kewirausahaan",
+            "description": "Perencanaan usaha sederhana, pengembangan produk, dan promosi digital."
+          }
+        ],
+        "meta": {
+          "page": 1,
+          "limit": 10,
+          "total": 10,
+          "total_pages": 1
+        }
+      },
+      "status": 200,
+      "errors": "400, 500"
+    },
+    {
+      "method": "GET",
+      "path": "/subjects/:id",
+      "group": "Pelajaran",
+      "title": "Detail pelajaran",
+      "access": "Publik",
+      "phase": "Utama",
+      "desc": "ID integer positif. Respons menggunakan ID relasi; ambil nama relasi dari endpoint terkait. Data tidak ditemukan menghasilkan 404.",
+      "request": null,
+      "response": {
+        "success": true,
+        "message": "Data berhasil diambil.",
+        "data": {
+          "id": 1,
+          "code": "MTK",
+          "name": "Matematika",
+          "description": "Materi latihan matematika untuk siswa sekolah."
+        }
+      },
+      "status": 200,
+      "errors": "400, 404, 500"
+    },
+    {
+      "method": "PATCH",
+      "path": "/subjects/:id",
+      "group": "Pelajaran",
+      "title": "Simulasi edit pelajaran",
+      "access": "Admin",
+      "phase": "Lanjutan",
+      "desc": "Ubah sebagian field yang diizinkan. Validasi berdasarkan fixture awal. Response menampilkan hasil penggabungan; GET berikutnya tetap membaca data awal. Tidak menyimpan perubahan.",
+      "request": {
+        "name": "Matematika Dasar",
+        "description": "Pengantar matematika."
+      },
+      "response": {
+        "success": true,
+        "message": "Simulasi perubahan berhasil. Data tidak disimpan.",
+        "data": {
+          "id": 1,
+          "code": "MTK",
+          "name": "Matematika Dasar",
+          "description": "Pengantar matematika."
+        },
+        "meta": {
+          "simulation": true,
+          "persisted": false
+        }
+      },
+      "status": 200,
+      "errors": "400, 401, 403, 404, 409, 422, 500, 503, 413, 415"
+    },
+    {
+      "method": "DELETE",
+      "path": "/subjects/:id",
+      "group": "Pelajaran",
+      "title": "Simulasi hapus pelajaran",
+      "access": "Admin",
+      "phase": "Lanjutan",
+      "desc": "Periksa ID pada fixture, lalu kembalikan konfirmasi. Tidak menghapus data atau menjalankan cascade; relasi tetap sama. Dipanggil lagi pada ID yang sama tetap sukses selama ID ada pada fixture.",
+      "request": null,
+      "response": {
+        "success": true,
+        "message": "Simulasi penghapusan berhasil. Data awal tetap tersedia.",
+        "data": {
+          "id": 1
+        },
+        "meta": {
+          "simulation": true,
+          "persisted": false
+        }
+      },
+      "status": 200,
+      "errors": "400, 401, 403, 404, 500, 503"
+    },
+    {
+      "method": "GET",
+      "path": "/news",
+      "group": "Berita",
+      "title": "Daftar berita",
+      "access": "Publik",
+      "phase": "Utama",
+      "desc": "Cari pada title, excerpt. Filter: category (kegiatan/prestasi/pengumuman). Sorting diizinkan: id, title, published_at. Contoh respons memakai data fixture. Maksimal 10 item ditampilkan pada halaman pertama dengan pengaturan default.",
+      "request": null,
+      "response": {
+        "success": true,
+        "message": "Data berhasil diambil.",
+        "data": [
+          {
+            "id": 10,
+            "title": "Tim Basket Meraih Juara Persahabatan",
+            "slug": "tim-basket-meraih-juara-persahabatan",
+            "excerpt": "Tim basket SekolahLab meraih juara dalam turnamen persahabatan antarkelas.",
+            "content": "Turnamen persahabatan berlangsung di lapangan sekolah dengan peserta dari berbagai kelas. Tim pemenang dinilai berdasarkan hasil pertandingan dan sportivitas. Berita ini adalah data fiktif untuk pembelajaran, bukan laporan kejadian nyata.",
+            "image_url": "https://images.unsplash.com/photo-1567167773757-cadd90d1d4a6?auto=format&fit=crop&w=1200&h=675&q=80",
+            "author_id": 1,
+            "category": "prestasi",
+            "published_at": "2026-09-10T01:00:00Z"
+          },
+          {
+            "id": 9,
+            "title": "Klub Baca Membuka Pendaftaran",
+            "slug": "klub-baca-membuka-pendaftaran",
+            "excerpt": "Klub baca menerima anggota baru untuk diskusi buku mingguan.",
+            "content": "Pendaftaran klub baca dibuka pada 9–16 September 2026 melalui wali kelas. Anggota dapat membawa buku favorit untuk diskusi perdana di perpustakaan. Kegiatan dan identitas dalam berita ini bersifat fiktif untuk latihan frontend.",
+            "image_url": "https://images.unsplash.com/photo-1660606422342-2ce59709bb14?auto=format&fit=crop&w=1200&h=675&q=80",
+            "author_id": 4,
+            "category": "pengumuman",
+            "published_at": "2026-09-09T01:00:00Z"
+          },
+          {
+            "id": 8,
+            "title": "Workshop Keamanan Digital",
+            "slug": "workshop-keamanan-digital",
+            "excerpt": "Workshop Keamanan Digital di SekolahLab, contoh berita untuk latihan frontend.",
+            "content": "Ini adalah berita fiktif untuk pembelajaran. Workshop Keamanan Digital menjadi bagian dari kegiatan warga SekolahLab. Data ini dibuat sebagai contoh tampilan daftar dan detail berita.",
+            "image_url": "https://images.unsplash.com/photo-1555209183-8facf96a4349?auto=format&fit=crop&w=1200&h=675&q=80",
+            "author_id": 1,
+            "category": "kegiatan",
+            "published_at": "2026-09-08T01:00:00Z"
+          },
+          {
+            "id": 7,
+            "title": "Informasi Perpustakaan",
+            "slug": "informasi-perpustakaan",
+            "excerpt": "Informasi Perpustakaan di SekolahLab, contoh berita untuk latihan frontend.",
+            "content": "Ini adalah berita fiktif untuk pembelajaran. Informasi Perpustakaan menjadi bagian dari kegiatan warga SekolahLab. Data ini dibuat sebagai contoh tampilan daftar dan detail berita.",
+            "image_url": "https://images.unsplash.com/photo-1749660354104-9a5ab1225805?auto=format&fit=crop&w=1200&h=675&q=80",
+            "author_id": 2,
+            "category": "pengumuman",
+            "published_at": "2026-09-07T01:00:00Z"
+          },
+          {
+            "id": 6,
+            "title": "Prestasi Tim Olahraga",
+            "slug": "prestasi-tim-olahraga",
+            "excerpt": "Prestasi Tim Olahraga di SekolahLab, contoh berita untuk latihan frontend.",
+            "content": "Ini adalah berita fiktif untuk pembelajaran. Prestasi Tim Olahraga menjadi bagian dari kegiatan warga SekolahLab. Data ini dibuat sebagai contoh tampilan daftar dan detail berita.",
+            "image_url": "https://images.unsplash.com/photo-1567167773757-cadd90d1d4a6?auto=format&fit=crop&w=1200&h=675&q=80",
+            "author_id": 1,
+            "category": "prestasi",
+            "published_at": "2026-09-06T01:00:00Z"
+          },
+          {
+            "id": 5,
+            "title": "Pameran Karya Desain",
+            "slug": "pameran-karya-desain",
+            "excerpt": "Pameran Karya Desain di SekolahLab, contoh berita untuk latihan frontend.",
+            "content": "Ini adalah berita fiktif untuk pembelajaran. Pameran Karya Desain menjadi bagian dari kegiatan warga SekolahLab. Data ini dibuat sebagai contoh tampilan daftar dan detail berita.",
+            "image_url": "https://images.unsplash.com/photo-1555209183-8facf96a4349?auto=format&fit=crop&w=1200&h=675&q=80",
+            "author_id": 2,
+            "category": "kegiatan",
+            "published_at": "2026-09-05T01:00:00Z"
+          },
+          {
+            "id": 4,
+            "title": "Kegiatan Pramuka Bersama",
+            "slug": "kegiatan-pramuka-bersama",
+            "excerpt": "Kegiatan Pramuka Bersama di SekolahLab, contoh berita untuk latihan frontend.",
+            "content": "Ini adalah berita fiktif untuk pembelajaran. Kegiatan Pramuka Bersama menjadi bagian dari kegiatan warga SekolahLab. Data ini dibuat sebagai contoh tampilan daftar dan detail berita.",
+            "image_url": "https://images.unsplash.com/photo-1660606422342-2ce59709bb14?auto=format&fit=crop&w=1200&h=675&q=80",
+            "author_id": 1,
+            "category": "kegiatan",
+            "published_at": "2026-09-04T01:00:00Z"
+          },
+          {
+            "id": 3,
+            "title": "Jadwal Pembagian Rapor",
+            "slug": "jadwal-pembagian-rapor",
+            "excerpt": "Jadwal Pembagian Rapor di SekolahLab, contoh berita untuk latihan frontend.",
+            "content": "Ini adalah berita fiktif untuk pembelajaran. Jadwal Pembagian Rapor menjadi bagian dari kegiatan warga SekolahLab. Data ini dibuat sebagai contoh tampilan daftar dan detail berita.",
+            "image_url": "https://images.unsplash.com/photo-1660606422342-2ce59709bb14?auto=format&fit=crop&w=1200&h=675&q=80",
+            "author_id": 2,
+            "category": "pengumuman",
+            "published_at": "2026-09-03T01:00:00Z"
+          },
+          {
+            "id": 2,
+            "title": "Juara Lomba Pemrograman",
+            "slug": "juara-lomba-pemrograman",
+            "excerpt": "Juara Lomba Pemrograman di SekolahLab, contoh berita untuk latihan frontend.",
+            "content": "Ini adalah berita fiktif untuk pembelajaran. Juara Lomba Pemrograman menjadi bagian dari kegiatan warga SekolahLab. Data ini dibuat sebagai contoh tampilan daftar dan detail berita.",
+            "image_url": "https://images.unsplash.com/photo-1555209183-8facf96a4349?auto=format&fit=crop&w=1200&h=675&q=80",
+            "author_id": 1,
+            "category": "prestasi",
+            "published_at": "2026-09-02T01:00:00Z"
+          },
+          {
+            "id": 1,
+            "title": "Pekan Literasi Sekolah",
+            "slug": "pekan-literasi-sekolah",
+            "excerpt": "Pekan Literasi Sekolah di SekolahLab, contoh berita untuk latihan frontend.",
+            "content": "Ini adalah berita fiktif untuk pembelajaran. Pekan Literasi Sekolah menjadi bagian dari kegiatan warga SekolahLab. Data ini dibuat sebagai contoh tampilan daftar dan detail berita.",
+            "image_url": "https://images.unsplash.com/photo-1749660354104-9a5ab1225805?auto=format&fit=crop&w=1200&h=675&q=80",
+            "author_id": 2,
+            "category": "kegiatan",
+            "published_at": "2026-09-01T01:00:00Z"
+          }
+        ],
+        "meta": {
+          "page": 1,
+          "limit": 10,
+          "total": 10,
+          "total_pages": 1
+        }
+      },
+      "status": 200,
+      "errors": "400, 500"
+    },
+    {
+      "method": "GET",
+      "path": "/news/:id",
+      "group": "Berita",
+      "title": "Detail berita",
+      "access": "Publik",
+      "phase": "Utama",
+      "desc": "ID integer positif. Respons menggunakan ID relasi; ambil nama relasi dari endpoint terkait. Data tidak ditemukan menghasilkan 404.",
+      "request": null,
+      "response": {
+        "success": true,
+        "message": "Data berhasil diambil.",
+        "data": {
+          "id": 1,
+          "title": "Pekan Literasi Sekolah",
+          "slug": "pekan-literasi-sekolah",
+          "excerpt": "Pekan Literasi Sekolah di SekolahLab, contoh berita untuk latihan frontend.",
+          "content": "Ini adalah berita fiktif untuk pembelajaran. Pekan Literasi Sekolah menjadi bagian dari kegiatan warga SekolahLab. Data ini dibuat sebagai contoh tampilan daftar dan detail berita.",
+          "image_url": "https://images.unsplash.com/photo-1749660354104-9a5ab1225805?auto=format&fit=crop&w=1200&h=675&q=80",
+          "author_id": 2,
+          "category": "kegiatan",
+          "published_at": "2026-09-01T01:00:00Z"
+        }
+      },
+      "status": 200,
+      "errors": "400, 404, 500"
+    },
+    {
+      "method": "PATCH",
+      "path": "/news/:id",
+      "group": "Berita",
+      "title": "Simulasi edit berita",
+      "access": "Admin",
+      "phase": "Lanjutan",
+      "desc": "Ubah sebagian field yang diizinkan. Validasi berdasarkan fixture awal. Response menampilkan hasil penggabungan; GET berikutnya tetap membaca data awal. Tidak menyimpan perubahan.",
+      "request": {
+        "title": "Pekan Literasi 2026",
+        "excerpt": "Kegiatan literasi bersama."
+      },
+      "response": {
+        "success": true,
+        "message": "Simulasi perubahan berhasil. Data tidak disimpan.",
+        "data": {
+          "id": 1,
+          "title": "Pekan Literasi 2026",
+          "slug": "pekan-literasi-sekolah",
+          "excerpt": "Kegiatan literasi bersama.",
+          "content": "Ini adalah berita fiktif untuk pembelajaran. Pekan Literasi Sekolah menjadi bagian dari kegiatan warga SekolahLab. Data ini dibuat sebagai contoh tampilan daftar dan detail berita.",
+          "image_url": "https://images.unsplash.com/photo-1749660354104-9a5ab1225805?auto=format&fit=crop&w=1200&h=675&q=80",
+          "author_id": 2,
+          "category": "kegiatan",
+          "published_at": "2026-09-01T01:00:00Z"
+        },
+        "meta": {
+          "simulation": true,
+          "persisted": false
+        }
+      },
+      "status": 200,
+      "errors": "400, 401, 403, 404, 409, 422, 500, 503, 413, 415"
+    },
+    {
+      "method": "DELETE",
+      "path": "/news/:id",
+      "group": "Berita",
+      "title": "Simulasi hapus berita",
+      "access": "Admin",
+      "phase": "Lanjutan",
+      "desc": "Periksa ID pada fixture, lalu kembalikan konfirmasi. Tidak menghapus data atau menjalankan cascade; relasi tetap sama. Dipanggil lagi pada ID yang sama tetap sukses selama ID ada pada fixture.",
+      "request": null,
+      "response": {
+        "success": true,
+        "message": "Simulasi penghapusan berhasil. Data awal tetap tersedia.",
+        "data": {
+          "id": 1
+        },
+        "meta": {
+          "simulation": true,
+          "persisted": false
+        }
+      },
+      "status": 200,
+      "errors": "400, 401, 403, 404, 500, 503"
+    },
+    {
+      "method": "GET",
+      "path": "/classes",
+      "group": "Kelas",
+      "title": "Daftar kelas",
+      "access": "Publik",
+      "phase": "Pendukung",
+      "desc": "Untuk pilihan filter dan menampilkan label relasi. Mendukung page, limit, search (name/code untuk jurusan; name untuk kelas), sort (id/name), order. Kelas juga mendukung major_id dan grade (10/11/12).",
+      "request": null,
+      "response": {
+        "success": true,
+        "message": "Data berhasil diambil.",
+        "data": [
+          {
+            "id": 1,
+            "name": "X RPL 1",
+            "grade": 10,
+            "major_id": 1,
+            "homeroom_teacher_id": 1,
+            "academic_year": "2026/2027"
+          },
+          {
+            "id": 2,
+            "name": "X TKJ 1",
+            "grade": 10,
+            "major_id": 2,
+            "homeroom_teacher_id": 2,
+            "academic_year": "2026/2027"
+          },
+          {
+            "id": 3,
+            "name": "X DKV 1",
+            "grade": 10,
+            "major_id": 3,
+            "homeroom_teacher_id": 3,
+            "academic_year": "2026/2027"
+          },
+          {
+            "id": 4,
+            "name": "XI RPL 1",
+            "grade": 11,
+            "major_id": 1,
+            "homeroom_teacher_id": 4,
+            "academic_year": "2026/2027"
+          },
+          {
+            "id": 5,
+            "name": "XI TKJ 1",
+            "grade": 11,
+            "major_id": 2,
+            "homeroom_teacher_id": 5,
+            "academic_year": "2026/2027"
+          },
+          {
+            "id": 6,
+            "name": "XI DKV 1",
+            "grade": 11,
+            "major_id": 3,
+            "homeroom_teacher_id": 6,
+            "academic_year": "2026/2027"
+          },
+          {
+            "id": 7,
+            "name": "X AKL 1",
+            "grade": 10,
+            "major_id": 4,
+            "homeroom_teacher_id": 7,
+            "academic_year": "2026/2027"
+          },
+          {
+            "id": 8,
+            "name": "X MPLB 1",
+            "grade": 10,
+            "major_id": 5,
+            "homeroom_teacher_id": 8,
+            "academic_year": "2026/2027"
+          },
+          {
+            "id": 9,
+            "name": "X PM 1",
+            "grade": 10,
+            "major_id": 6,
+            "homeroom_teacher_id": 9,
+            "academic_year": "2026/2027"
+          },
+          {
+            "id": 10,
+            "name": "X TKR 1",
+            "grade": 10,
+            "major_id": 7,
+            "homeroom_teacher_id": 10,
+            "academic_year": "2026/2027"
+          }
+        ],
+        "meta": {
+          "page": 1,
+          "limit": 10,
+          "total": 13,
+          "total_pages": 2
+        }
+      },
+      "status": 200,
+      "errors": "400, 500"
+    },
+    {
+      "method": "GET",
+      "path": "/classes/:id",
+      "group": "Kelas",
+      "title": "Detail kelas",
+      "access": "Publik",
+      "phase": "Pendukung",
+      "desc": "Ambil data pendukung berdasarkan ID integer positif.",
+      "request": null,
+      "response": {
+        "success": true,
+        "message": "Data berhasil diambil.",
+        "data": {
+          "id": 1,
+          "name": "X RPL 1",
+          "grade": 10,
+          "major_id": 1,
+          "homeroom_teacher_id": 1,
+          "academic_year": "2026/2027"
+        }
+      },
+      "status": 200,
+      "errors": "400, 404, 500"
+    },
+    {
+      "method": "GET",
+      "path": "/majors",
+      "group": "Jurusan",
+      "title": "Daftar jurusan",
+      "access": "Publik",
+      "phase": "Pendukung",
+      "desc": "Untuk pilihan filter dan menampilkan label relasi. Mendukung page, limit, search (name/code untuk jurusan; name untuk kelas), sort (id/name), order. Kelas juga mendukung major_id dan grade (10/11/12).",
+      "request": null,
+      "response": {
+        "success": true,
+        "message": "Data berhasil diambil.",
+        "data": [
+          {
+            "id": 1,
+            "code": "RPL",
+            "name": "Rekayasa Perangkat Lunak",
+            "description": "Program pembelajaran rekayasa perangkat lunak."
+          },
+          {
+            "id": 2,
+            "code": "TKJ",
+            "name": "Teknik Komputer dan Jaringan",
+            "description": "Program pembelajaran teknik komputer dan jaringan."
+          },
+          {
+            "id": 3,
+            "code": "DKV",
+            "name": "Desain Komunikasi Visual",
+            "description": "Program pembelajaran desain komunikasi visual."
+          },
+          {
+            "id": 4,
+            "code": "AKL",
+            "name": "Akuntansi dan Keuangan Lembaga",
+            "description": "Program pembelajaran akuntansi dan keuangan lembaga dengan praktik berbasis proyek."
+          },
+          {
+            "id": 5,
+            "code": "MPLB",
+            "name": "Manajemen Perkantoran dan Layanan Bisnis",
+            "description": "Program pembelajaran manajemen perkantoran dan layanan bisnis dengan praktik berbasis proyek."
+          },
+          {
+            "id": 6,
+            "code": "PM",
+            "name": "Pemasaran",
+            "description": "Program pembelajaran pemasaran dengan praktik berbasis proyek."
+          },
+          {
+            "id": 7,
+            "code": "TKR",
+            "name": "Teknik Kendaraan Ringan",
+            "description": "Program pembelajaran teknik kendaraan ringan dengan praktik berbasis proyek."
+          },
+          {
+            "id": 8,
+            "code": "TSM",
+            "name": "Teknik Sepeda Motor",
+            "description": "Program pembelajaran teknik sepeda motor dengan praktik berbasis proyek."
+          },
+          {
+            "id": 9,
+            "code": "KUL",
+            "name": "Kuliner",
+            "description": "Program pembelajaran kuliner dengan praktik berbasis proyek."
+          },
+          {
+            "id": 10,
+            "code": "PH",
+            "name": "Perhotelan",
+            "description": "Program pembelajaran perhotelan dengan praktik berbasis proyek."
+          }
+        ],
+        "meta": {
+          "page": 1,
+          "limit": 10,
+          "total": 10,
+          "total_pages": 1
+        }
+      },
+      "status": 200,
+      "errors": "400, 500"
+    },
+    {
+      "method": "GET",
+      "path": "/majors/:id",
+      "group": "Jurusan",
+      "title": "Detail jurusan",
+      "access": "Publik",
+      "phase": "Pendukung",
+      "desc": "Ambil data pendukung berdasarkan ID integer positif.",
+      "request": null,
+      "response": {
+        "success": true,
+        "message": "Data berhasil diambil.",
+        "data": {
+          "id": 1,
+          "code": "RPL",
+          "name": "Rekayasa Perangkat Lunak",
+          "description": "Program pembelajaran rekayasa perangkat lunak."
+        }
+      },
+      "status": 200,
+      "errors": "400, 404, 500"
+    },
+    {
+      "method": "GET",
+      "path": "/health",
+      "group": "Sistem",
+      "title": "Status API",
+      "access": "Publik",
+      "phase": "Pendukung",
+      "desc": "Memastikan function merespons. Tidak memeriksa database karena backend tidak memakai database.",
+      "request": null,
+      "response": {
+        "success": true,
+        "message": "Data berhasil diambil.",
+        "data": {
+          "service": "sekolahlab-api",
+          "status": "ok",
+          "version": "v1"
+        }
+      },
+      "status": 200,
+      "errors": "500"
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "name": "Admin SekolahLab",
+    "email": "admin@sekolahlab.com",
+    "role": "admin",
+    "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-admin-001",
+    "password_hash": "scrypt$101ea6350871f14ee4fad1d4cc0bc53a$c7aa1a8237b15828bc96ece53e6a002ebe53e2eedb2c126de80ba2caa6d11909873701c43ae4e65c103130bbc760b027dacf5dd3220c7688eaebea4376d0cc98"
+  },
+  {
+    "id": 2,
+    "name": "Budi Santoso",
+    "email": "guru@sekolahlab.com",
+    "role": "teacher",
+    "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-teacher-001",
+    "password_hash": "scrypt$c6e2d9d20c3b183e455ad74c922627c2$552fec5d7ab1a67514c9253f048903ed671726e44c78583418667cf0b13c5e9de1eb245fa7c038c01ce25c2ec714a764f8453c816e954e98f499699fd073f8f7"
+  },
+  {
+    "id": 3,
+    "name": "Alya Putri",
+    "email": "siswa@sekolahlab.com",
+    "role": "student",
+    "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-001",
+    "password_hash": "scrypt$4972330e5236f0e44f13d26f87510ca8$7c72c63f592be335fb4323152378ad4ed28edfdfa1272106b6260d4836ac2154b34294eef4742daeaa1d4bb49344a5158bc330a40daafb5113f604d0d6f1dd6b"
+  },
+  {
+    "id": 4,
+    "name": "Ratna Wulandari",
+    "email": "ratna@sekolahlab.com",
+    "role": "teacher",
+    "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-teacher-002",
+    "password_hash": "scrypt$7ab88cfaf196862eef5a5e44db19b8e3$e46ad38f4bd3459412e742dae270b828a1b3cef10679313385be3951de72777915649f843f46f6ddf243902b5bf538d144594310da301a96908bf4798beb6301"
+  },
+  {
+    "id": 5,
+    "name": "Dewi Anggraini",
+    "email": "dewi@sekolahlab.com",
+    "role": "teacher",
+    "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-teacher-003",
+    "password_hash": "scrypt$6103cd0c078724e411c6c5078e106993$86cbf22a50a1d08b44875c418b5213d2bff577da99a95792fccb99c5099d72a52e2b203423073e30b7782fc854608bbdea664e0888058bf001ac9d15698f51ce"
+  },
+  {
+    "id": 6,
+    "name": "Agus Pratama",
+    "email": "agus@sekolahlab.com",
+    "role": "teacher",
+    "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-teacher-004",
+    "password_hash": "scrypt$bc7ee651b6d5a10473d7dee5e83d7c7d$4eab37424f5701603ac1d910a873ca11b8d03a4f4137ff7d16c95ddcc0d910487a839fb60452f7810d1d1263fcbdc4e68a4eb9c9e4fb11c3ffa7922e7a5e049e"
+  },
+  {
+    "id": 7,
+    "name": "Arif Ramadhan",
+    "email": "arif@sekolahlab.com",
+    "role": "student",
+    "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-002",
+    "password_hash": "scrypt$b2bb6773ff4f7a115a592f2b22cec37d$3b1eb31c9fe4a65cdc1c6b309dfe2f491a4b1a44c26430fbdf2d7ab95c8b52bb08d67378de279fa0e597e4098c85bf37b54fc862308f647aee57edfec537b086"
+  },
+  {
+    "id": 8,
+    "name": "Citra Lestari",
+    "email": "citra@sekolahlab.com",
+    "role": "student",
+    "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-003",
+    "password_hash": "scrypt$f3b9b142fa164d917a0540b55a39b8ca$f6664e86657b420d172b5dfe13a89242a7f72c5ec7ae2c7c1483c552b14b5f85cf0dc3c61d2acfdee6228f4007cf216f3f8645438fa6923f637d6c9983bc46ef"
+  },
+  {
+    "id": 9,
+    "name": "Danu Wijaya",
+    "email": "danu@sekolahlab.com",
+    "role": "student",
+    "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-004",
+    "password_hash": "scrypt$804829f8fd6afb08dd2336513a016fc5$0e7d3e376724c3071d389b2ebb21616488cae4511b0b4fc3372c6752917d3b9d6114620be847d911fea46b6565eafd972e01d6f506366615554a68e0225ca3ac"
+  },
+  {
+    "id": 10,
+    "name": "Eka Permata",
+    "email": "eka@sekolahlab.com",
+    "role": "student",
+    "photo_url": "https://api.dicebear.com/10.x/avataaars/svg?seed=sekolahlab-student-005",
+    "password_hash": "scrypt$560127348820cc20027df6c675d19c96$ea7225c3fb55eb1b99aa1b590b50b7e75c3e302d80229ea1831c894185cd6dce78b8f0f756954a885b5e818039f2c6e07692ecfba9de04f54d7a44cdcf6778f4"
+  }
+]

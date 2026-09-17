@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "title": "Pekan Literasi Sekolah",
+    "slug": "pekan-literasi-sekolah",
+    "excerpt": "Pekan Literasi Sekolah di SekolahLab, contoh berita untuk latihan frontend.",
+    "content": "Ini adalah berita fiktif untuk pembelajaran. Pekan Literasi Sekolah menjadi bagian dari kegiatan warga SekolahLab. Data ini dibuat sebagai contoh tampilan daftar dan detail berita.",
+    "image_url": "https://images.unsplash.com/photo-1749660354104-9a5ab1225805?auto=format&fit=crop&w=1200&h=675&q=80",
+    "author_id": 2,
+    "category": "kegiatan",
+    "published_at": "2026-09-01T01:00:00Z"
+  },
+  {
+    "id": 2,
+    "title": "Juara Lomba Pemrograman",
+    "slug": "juara-lomba-pemrograman",
+    "excerpt": "Juara Lomba Pemrograman di SekolahLab, contoh berita untuk latihan frontend.",
+    "content": "Ini adalah berita fiktif untuk pembelajaran. Juara Lomba Pemrograman menjadi bagian dari kegiatan warga SekolahLab. Data ini dibuat sebagai contoh tampilan daftar dan detail berita.",
+    "image_url": "https://images.unsplash.com/photo-1555209183-8facf96a4349?auto=format&fit=crop&w=1200&h=675&q=80",
+    "author_id": 1,
+    "category": "prestasi",
+    "published_at": "2026-09-02T01:00:00Z"
+  },
+  {
+    "id": 3,
+    "title": "Jadwal Pembagian Rapor",
+    "slug": "jadwal-pembagian-rapor",
+    "excerpt": "Jadwal Pembagian Rapor di SekolahLab, contoh berita untuk latihan frontend.",
+    "content": "Ini adalah berita fiktif untuk pembelajaran. Jadwal Pembagian Rapor menjadi bagian dari kegiatan warga SekolahLab. Data ini dibuat sebagai contoh tampilan daftar dan detail berita.",
+    "image_url": "https://images.unsplash.com/photo-1660606422342-2ce59709bb14?auto=format&fit=crop&w=1200&h=675&q=80",
+    "author_id": 2,
+    "category": "pengumuman",
+    "published_at": "2026-09-03T01:00:00Z"
+  },
+  {
+    "id": 4,
+    "title": "Kegiatan Pramuka Bersama",
+    "slug": "kegiatan-pramuka-bersama",
+    "excerpt": "Kegiatan Pramuka Bersama di SekolahLab, contoh berita untuk latihan frontend.",
+    "content": "Ini adalah berita fiktif untuk pembelajaran. Kegiatan Pramuka Bersama menjadi bagian dari kegiatan warga SekolahLab. Data ini dibuat sebagai contoh tampilan daftar dan detail berita.",
+    "image_url": "https://images.unsplash.com/photo-1660606422342-2ce59709bb14?auto=format&fit=crop&w=1200&h=675&q=80",
+    "author_id": 1,
+    "category": "kegiatan",
+    "published_at": "2026-09-04T01:00:00Z"
+  },
+  {
+    "id": 5,
+    "title": "Pameran Karya Desain",
+    "slug": "pameran-karya-desain",
+    "excerpt": "Pameran Karya Desain di SekolahLab, contoh berita untuk latihan frontend.",
+    "content": "Ini adalah berita fiktif untuk pembelajaran. Pameran Karya Desain menjadi bagian dari kegiatan warga SekolahLab. Data ini dibuat sebagai contoh tampilan daftar dan detail berita.",
+    "image_url": "https://images.unsplash.com/photo-1555209183-8facf96a4349?auto=format&fit=crop&w=1200&h=675&q=80",
+    "author_id": 2,
+    "category": "kegiatan",
+    "published_at": "2026-09-05T01:00:00Z"
+  },
+  {
+    "id": 6,
+    "title": "Prestasi Tim Olahraga",
+    "slug": "prestasi-tim-olahraga",
+    "excerpt": "Prestasi Tim Olahraga di SekolahLab, contoh berita untuk latihan frontend.",
+    "content": "Ini adalah berita fiktif untuk pembelajaran. Prestasi Tim Olahraga menjadi bagian dari kegiatan warga SekolahLab. Data ini dibuat sebagai contoh tampilan daftar dan detail berita.",
+    "image_url": "https://images.unsplash.com/photo-1567167773757-cadd90d1d4a6?auto=format&fit=crop&w=1200&h=675&q=80",
+    "author_id": 1,
+    "category": "prestasi",
+    "published_at": "2026-09-06T01:00:00Z"
+  },
+  {
+    "id": 7,
+    "title": "Informasi Perpustakaan",
+    "slug": "informasi-perpustakaan",
+    "excerpt": "Informasi Perpustakaan di SekolahLab, contoh berita untuk latihan frontend.",
+    "content": "Ini adalah berita fiktif untuk pembelajaran. Informasi Perpustakaan menjadi bagian dari kegiatan warga SekolahLab. Data ini dibuat sebagai contoh tampilan daftar dan detail berita.",
+    "image_url": "https://images.unsplash.com/photo-1749660354104-9a5ab1225805?auto=format&fit=crop&w=1200&h=675&q=80",
+    "author_id": 2,
+    "category": "pengumuman",
+    "published_at": "2026-09-07T01:00:00Z"
+  },
+  {
+    "id": 8,
+    "title": "Workshop Keamanan Digital",
+    "slug": "workshop-keamanan-digital",
+    "excerpt": "Workshop Keamanan Digital di SekolahLab, contoh berita untuk latihan frontend.",
+    "content": "Ini adalah berita fiktif untuk pembelajaran. Workshop Keamanan Digital menjadi bagian dari kegiatan warga SekolahLab. Data ini dibuat sebagai contoh tampilan daftar dan detail berita.",
+    "image_url": "https://images.unsplash.com/photo-1555209183-8facf96a4349?auto=format&fit=crop&w=1200&h=675&q=80",
+    "author_id": 1,
+    "category": "kegiatan",
+    "published_at": "2026-09-08T01:00:00Z"
+  },
+  {
+    "id": 9,
+    "title": "Klub Baca Membuka Pendaftaran",
+    "slug": "klub-baca-membuka-pendaftaran",
+    "excerpt": "Klub baca menerima anggota baru untuk diskusi buku mingguan.",
+    "content": "Pendaftaran klub baca dibuka pada 9–16 September 2026 melalui wali kelas. Anggota dapat membawa buku favorit untuk diskusi perdana di perpustakaan. Kegiatan dan identitas dalam berita ini bersifat fiktif untuk latihan frontend.",
+    "image_url": "https://images.unsplash.com/photo-1660606422342-2ce59709bb14?auto=format&fit=crop&w=1200&h=675&q=80",
+    "author_id": 4,
+    "category": "pengumuman",
+    "published_at": "2026-09-09T01:00:00Z"
+  },
+  {
+    "id": 10,
+    "title": "Tim Basket Meraih Juara Persahabatan",
+    "slug": "tim-basket-meraih-juara-persahabatan",
+    "excerpt": "Tim basket SekolahLab meraih juara dalam turnamen persahabatan antarkelas.",
+    "content": "Turnamen persahabatan berlangsung di lapangan sekolah dengan peserta dari berbagai kelas. Tim pemenang dinilai berdasarkan hasil pertandingan dan sportivitas. Berita ini adalah data fiktif untuk pembelajaran, bukan laporan kejadian nyata.",
+    "image_url": "https://images.unsplash.com/photo-1567167773757-cadd90d1d4a6?auto=format&fit=crop&w=1200&h=675&q=80",
+    "author_id": 1,
+    "category": "prestasi",
+    "published_at": "2026-09-10T01:00:00Z"
+  }
+]
